@@ -1,0 +1,995 @@
+<!-- product market page -->
+<section class="section product_market_section hide-on-large-only">
+    <!-- <div class="divider"></div> -->
+    <form method="POST" action="/inputMarketData" id="productMarketForm">
+        <div class="row center">
+            <!-- capturing the data -->
+            <div class="col s12">
+                <h4 class="center green-text text-darken-1">PRODUCT MARKET INFORMATION</h4>
+                <small class="center green-text text-darken-1">Please fill in the form</small>
+                <div class="submitAlert">
+                    <p>Success: Your data has been sent</p>
+                </div>
+                <div class="errorAlert">
+                    <p>Error: All fields requires input</p>
+                </div>
+                <div class="container">
+                    <ul class="collapsible">
+                        <!-- Market Location Information -->
+                        <li class="active">
+                            <div class="collapsible-header">Market Location</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <label for="mktLocality">Market Locality</label>
+                                    <input type="text" name="mktLocality" id="mktLocality" required>
+                                </div>
+                                <!-- region section -->
+                                <div class="input-field">
+                                    <select id="mktRegion" name="mktRegion" required class="validate">
+                                        <option class="gray-text" required disabled selected>Select a region</option>
+                                        <option id="WEST" value="WEST">West</option>
+                                        <option id="EAST" value="EAST">East</option>
+                                        <!-- <option id="WAR">Western Area Rural</option> -->
+                                        <option id="NORTH_EAST" value="NORTH_EAST">North East</option>
+                                        <option id="NORTH_WEST" value="NORTH_WEST">North West</option>
+                                        <option id="SOUTH" value="SOUTH">South</option>
+                                    </select>
+                                </div>
+                                <!-- end of region section -->
+                                <!-- east dictricts -->
+                                <div class="input-field" id="East_Districts_Div">
+                                    <select id="mktDistrict" name="mktDistrict" class="East_Districts">
+                                        <option value="" class="gray-text" required disabled selected>Choose a District</option>
+                                        <option value="Kaliahun">Kaliahun</option>
+                                        <option value="Kenema">Kenema</option>
+                                        <option value="Kono">Kono</option>
+                                    </select>
+                                </div>
+                                <!-- west districts -->
+                                <div class="input-field" id="West_Districts_Div">
+                                    <select id="mktDistrict" name="mktDistrict" class="West_Districts">
+                                        <option value="" class="gray-text" required disabled selected>Choose a District</option>
+                                        <option value="Freetown">Freetown</option>
+                                    </select>
+                                </div>
+                                <!-- north-east districts -->
+                                <div class="input-field" id="North_East_Districts_Div">
+                                    <select id="mktDistrict" name="mktDistrict" class="North_East_Districts">
+                                        <option value="" class="gray-text" required disabled selected>Choose a District</option>
+                                        <option value="Bombali">Bombali</option>
+                                        <option value="Koinadugu">Koinadugu</option>
+                                        <option value="Tonkolili">Tonkolili</option>
+                                        <option value="Falaba">Falaba</option>
+                                    </select>
+                                </div>
+                                <!-- north_west_districts -->
+                                <div class="input-field" id="North_West_Districts_Div">
+                                    <select id="mktDistrict" name="mktDistrict" class="North_West_Districts">
+                                        <option value="" class="gray-text" required disabled selected>Choose a District</option>
+                                        <option value="Kambia">Kambia</option>
+                                        <option value="PortoLoko">Porto Loko</option>
+                                        <option value="Karene">Karene</option>
+                                    </select>
+                                </div>
+                                <!-- south_districts -->
+                                <div class="input-field" id="South_Districts_Div">
+                                    <select id="mktDistrict" name="mktDistrict" class="South_Districts">
+                                        <option value="" class="gray-text" required disabled selected>Choose a District</option>
+                                        <option value="Bo">Bo</option>
+                                        <option value="Bonthe">Bonthe</option>
+                                        <option value="Moyamba">Moyamba</option>
+                                        <option value="Pujehun">Pujehun</option>
+                                    </select>
+                                </div>
+
+                                <!-- Chiefdom Section -->
+                                    <!-- West Chiefdoms -->
+                                    <div class="input-field" id="West_Chiefdom_Div">
+                                        <select id="mktChiefdom" name="mktChiefdom">
+                                            <option value="" class="gray-text" required disabled selected>Choose a West Chiefdom</option>
+                                            <option value="Koya_Rural">Koya Rural</option>
+                                            <option value="Mountain_Rural">Mountain Rural</option>
+                                            <option value="Waterloo_Rural">Waterloo Rural</option>
+                                            <option value="Central_I">Central I</option>
+                                            <option value="Central_II">Central II</option>
+                                            <option value="East_I">East I</option>
+                                            <option value="East_II">East II</option>
+                                            <option value="East_III">East III</option>
+                                            <option value="West_I">West I</option>
+                                            <option value="West_II">West II</option>
+                                            <option value="West_III">West III</option>
+                                        </select>
+                                    </div>
+                                    <!-- end of west chiefdom -->
+                                    
+                                    <!-- East Chiefdoms -->
+                                        <!-- Kaliahun chiefdoms -->
+                                        <div class="input-field" id="Kai_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Kaliahun Chiefdom</option>
+                                                <option value="Dea">Dea</option>
+                                                <option value="Jaluahun">Jaluahun</option>
+                                                <option value="Jawei">Jawei</option>
+                                                <option value="Kissi_Kama">Kissi Kama</option>
+                                                <option value="Kissi_Teng">Kissi Teng</option>
+                                                <option value="Kissi_Tongi">Kissi Tongi</option>
+                                                <option value="Malema">Malema</option>
+                                                <option value="Mandu">Mandu</option>
+                                                <option value="Peje_Bongre">Peje Bongre</option>
+                                                <option value="Peje_West">Peje West</option>
+                                                <option value="Penguia">Penguia</option>
+                                                <option value="Upper_Bambara">Upper Bambara</option>
+                                                <option value="Yawei">Yawei</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Kaliahun chiefdoms -->
+                                        <!-- Kenema chiefdoms -->
+                                        <div class="input-field" id="Ken_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Kenema Chiefdom</option>
+                                                <option value="Dama">Dama</option>
+                                                <option value="Dodo">Dodo</option>
+                                                <option value="Gaura">Gaura</option>
+                                                <option value="Gorama_Mende">Gorama Mende</option>
+                                                <option value="Kandu_Leppiam">Kandu Leppiam</option>
+                                                <option value="Koya">Koya</option>
+                                                <option value="Langurama">Langurama</option>
+                                                <option value="Mandu">Mandu</option>
+                                                <option value="Lower_Bambara">Lower Bambara</option>
+                                                <option value="Malegohun">Malegohun</option>
+                                                <option value="Niawa">Niawa</option>
+                                                <option value="Nomo">Nomo</option>
+                                                <option value="Simbaru">Simbaru</option>
+                                                <option value="Malegohun">Malegohun</option>
+                                                <option value="Small_Bo">Small Bo</option>
+                                                <option value="Tunkia">Tunkia</option>
+                                                <option value="Wando">Wando</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Kenema chiefdoms -->
+                                        <!-- Kono chiefdoms -->
+                                        <div class="input-field" id="Kon_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Kono Chiefdom</option>
+                                                <option value="Fiama">Fiama</option>
+                                                <option value="Gbane">Gbane</option>
+                                                <option value="Gbane_Kandor">Gbane Kandor</option>
+                                                <option value="Gbense">Gbense</option>
+                                                <option value="Gorama_Kono">Gorama Kono</option>
+                                                <option value="Kamara">Kamara</option>
+                                                <option value="Lei">Lei</option>
+                                                <option value="Mafindor">Mafindor</option>
+                                                <option value="Nimikoro">Nimikoro</option>
+                                                <option value="Nimiyama">Nimiyama</option>
+                                                <option value="Sandor">Sandor</option>
+                                                <option value="Soa">Soa</option>
+                                                <option value="Tankoro">Tankoro</option>
+                                                <option value="Toli">Toli</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Kono chiefdoms -->
+                                    <!-- End of East Chiefdom -->
+
+                                    <!-- North East Chiefdom -->
+                                        <!-- Bombali chiefdoms -->
+                                        <div class="input-field" id="Bom_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Bombali Chiefdom</option>
+                                                <option value="Biriwa">Biriwa</option>
+                                                <option value="Bombali_Shebora">Bombali Shebora</option>
+                                                <option value="Gbanti_Kamaranka">Gbanti Kamaranka</option>
+                                                <option value="Gbendembu_Ngowahun">Gbendembu Ngowahun</option>
+                                                <option value="Libeisaygahun">Libeisaygahun</option>
+                                                <option value="Magbaiamba_Ndowahun">Magbaiamba Ndowahun</option>
+                                                <option value="Paki_Massabong">Paki Massabong</option>
+                                                <option value="Safroko_Limba">Safroko Limba</option>
+                                                <option value="Sanda_Loko">Sanda Loko</option>
+                                                <option value="Sanda_Tenraren">Sanda Tenraren</option>
+                                                <option value="Sella_Limba">Sella Limba</option>
+                                                <option value="Tambakha">Tambakha</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Bombali chiefdoms -->
+                                        <!-- Koinadugu chiefdoms -->
+                                        <div class="input-field" id="Koi_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Koinadugu Chiefdom</option>
+                                                <option value="Diang">Diang</option>
+                                                <option value="Folosaba_Dembelia">Folosaba Dembelia</option>
+                                                <option value="Kasonko">Kasonko</option>
+                                                <option value="Mongo">Mongo</option>
+                                                <option value="Neini">Neini</option>
+                                                <option value="Neya">Neya</option>
+                                                <option value="Sengbeh">Sengbeh</option>
+                                                <option value="Sulima">Sulima</option>
+                                                <option value="Wara_Wara_Bafodia">Wara Wara Bafodia</option>
+                                                <option value="Wara_Wara_Yagala">Wara Wara Yagala</option>
+                                                <option value="Dembelia_Sinkunia">Dembelia Sinkunia</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Koinadugu chiefdoms -->
+                                        <!-- Tonkolili chiefdoms -->
+                                        <div class="input-field" id="Ton_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Tonkolili Chiefdom</option>
+                                                <option value="Gbonkolenken">Gbonkolenken</option>
+                                                <option value="Kafe_Simiria">Kafe Simiria</option>
+                                                <option value="Kalansongoia">Kalansongoia</option>
+                                                <option value="Kholifa">Kholifa</option>
+                                                <option value="Kholifa_Mabang">Kholifa Mabang</option>
+                                                <option value="Kunike">Kunike</option>
+                                                <option value="Kunike_Barina">Kunike Barina</option>
+                                                <option value="Malal_Mara">Malal Mara</option>
+                                                <option value="Sambaia">Sambaia</option>
+                                                <option value="Tane">Tane</option>
+                                                <option value="Yoni">Yoni</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Tonkolili chiefdoms -->
+                                    <!-- end of north east chiefdom -->
+
+                                    <!-- North West Chiefdoms -->
+                                        <!-- Kambia chiefdoms -->
+                                        <div class="input-field" id="Kam_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Kambia Chiefdom</option>
+                                                <option value="Briama">Briama</option>
+                                                <option value="Gbinle_Dixing">Gbinle Dixing</option>
+                                                <option value="Magbema">Magbema</option>
+                                                <option value="Mambolo">Mambolo</option>
+                                                <option value="Masungbala">Masungbala</option>
+                                                <option value="Samu">Samu</option>
+                                                <option value="Tonko_Limba">Tonko Limba</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Kambia chiefdoms -->
+                                        <!-- Port Loko chiefdoms -->
+                                        <div class="input-field" id="Por_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Port Loko Chiefdom</option>
+                                                <option value="Bureh_Kaseh">Bureh Kaseh</option>
+                                                <option value="Buya_Romende">Buya Romende</option>
+                                                <option value="Debia">Debia</option>
+                                                <option value="Kaffu_Bullom">Kaffu Bullom</option>
+                                                <option value="Koya">Koya</option>
+                                                <option value="Loko_Massama">Loko Massama</option>
+                                                <option value="Maforki">Maforki</option>
+                                                <option value="Marampa">Marampa</option>
+                                                <option value="Masimera">Masimera</option>
+                                                <option value="T.M._Safroko">T.M. Safroko</option>
+                                                <option value="Sanda_Magbolontor">Sanda Magbolontor</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Port Loko chiefdoms -->
+                                    <!-- End of north west chiefdom -->
+
+                                    <!-- South Chiefdoms -->
+                                        <!-- Bo chiefdoms -->
+                                        <div class="input-field" id="Bo_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Bo Chiefdom</option>
+                                                <option value="Badjia">Badjia</option>
+                                                <option value="Bagbo">Bagbo</option>
+                                                <option value="Bagbwe">Bagbwe</option>
+                                                <option value="Baoma">Baoma</option>
+                                                <option value="Bumpe_Gao">Bumpe-Gao</option>
+                                                <option value="Gbo">Gbo</option>
+                                                <option value="Jaiama_Bongor">Jaiama Bongor</option>
+                                                <option value="Kakua">Kakua</option>
+                                                <option value="Komboya">Komboya</option>
+                                                <option value="Lugbu">Lugbu</option>
+                                                <option value="Niawa_Lenga">Niawa Lenga</option>
+                                                <option value="Selenga">Selenga</option>
+                                                <option value="Tikonko">Tikonko</option>
+                                                <option value="Valunia">Valunia</option>
+                                                <option value="Wonde">Wonde</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Bo chiefdoms -->
+                                        <!-- Bonthe chiefdoms -->
+                                        <div class="input-field" id="Bon_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Bonthe Chiefdom</option>
+                                                <option value="Benducha">Benducha</option>
+                                                <option value="Bum">Bum</option>
+                                                <option value="Debia">Debia</option>
+                                                <option value="Imperi">Imperi</option>
+                                                <option value="Jong">Jong</option>
+                                                <option value="Kpanda_Kemo">Kpanda Kemo</option>
+                                                <option value="Kwamebai_Krim">Kwamebai Krim</option>
+                                                <option value="Nongoba_Bullom">Nongoba Bullom</option>
+                                                <option value="Sittia">Sittia</option>
+                                                <option value="Sogbini">Sogbini</option>
+                                                <option value="Yawbeko">Yawbeko</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Bonthe chiefdoms -->
+                                        <!-- Moyamba chiefdoms -->
+                                        <div class="input-field" id="Moy_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Moyamba Chiefdom</option>
+                                                <option value="Bagruwa">Bagruwa</option>
+                                                <!-- <option value="Banta">Banta</option> -->
+                                                <option value="Bumpe">Bumpe</option>
+                                                <option value="Dasse">Dasse</option>
+                                                <option value="Fakunya">Fakunya</option>
+                                                <option value="Kori">Kori</option>
+                                                <option value="Kagboro">Kagboro</option>
+                                                <option value="Kaiyamba">Kaiyamba</option>
+                                                <option value="Kamajei">Kamajei</option>
+                                                <option value="Kongbora">Kongbora</option>
+                                                <option value="Kowa">Kowa</option>
+                                                <option value="Ribbi">Ribbi</option>
+                                                <option value="Timdale">Timdale</option>
+                                                <option value="Lower Banta">Lower Banta</option>
+                                                <option value="Upper Banta">Upper Banta</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Moyamba chiefdoms -->
+                                        <!-- Pujehun chiefdoms -->
+                                        <div class="input-field" id="Puj_Chiefdom_Div">
+                                            <select id="mktChiefdom" name="mktChiefdom">
+                                                <option value="" class="gray-text" required disabled selected>Choose a Pujehun Chiefdom</option>
+                                                <option value="Barri">Barri</option>
+                                                <option value="Gallines_Perri">Gallines Perri</option>
+                                                <option value="Kpaka">Kpaka</option>
+                                                <option value="Kpanga_Kagonde">Kpanga Kagonde</option>
+                                                <option value="Makpele">Makpele</option>
+                                                <option value="Malen">Malen</option>
+                                                <option value="Mano_Sakrim">Mano Sakrim</option>
+                                                <option value="Panga_Krim">Panga Krim</option>
+                                                <option value="Peje">Peje</option>
+                                                <option value="Soro_Gbema">Soro Gbema</option>
+                                                <option value="Sowa">Sowa</option>
+                                                <option value="Yekomo_Kpukumu_Krim">Yekomo Kpukumu Krim</option>
+                                            </select>
+                                        </div>
+                                        <!-- end of Pujehun chiefdoms -->
+                                    <!-- End of South chiefdom -->
+
+                                <!-- End of Chiefdom -->
+
+                                <!-- MARKET NAMES -->
+                                <!-- east_markets -->
+                                    <!-- kailahun markets -->
+                                    <div class="input-field" id="kai_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Daru">Daru (KAI)</option>
+                                            <option value="Dowei_Segbwema">Dowei - Segbwema (KAI)</option>
+                                            <option value="Dowei_Daru">Dowei - Daru (KAI)</option>
+                                            <option value="Jopowahun">Jopowahun (KAI)</option>
+                                            <option value="Pendembu">Pendembu (KAI)</option>
+                                            <option value="Segbwema">Segbwema (KAI)</option>
+                                        </select>
+                                    </div>
+                                    <!-- kenema markets -->
+                                    <div class="input-field" id="ken_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Blama">Blama (KEN)</option>
+                                            <option value="Bradford">Bradford (KEN)</option>
+                                            <option value="Gbogbotor">Gbogbotor (KEN)</option>
+                                            <option value="Gbongboto">Gbongboto (KEN)</option>
+                                            <option value="Kpandebu">Kpandebu (KEN)</option>
+                                            <option value="Maxwell_Kobi">Maxwell Kobi (KEN)</option>
+                                        </select>
+                                    </div>
+                                    <!-- kono markets -->
+                                    <div class="input-field" id="kon_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Gbense">Gbense (KON)</option>
+                                            <option value="Konomayi_Park">Konomayi Park (KON)</option>
+                                            <option value="Tankoro">Tankoro (KON)</option>
+                                        </select>
+                                    </div>
+                                <!-- end of east markets -->
+
+                                <!-- west_markets -->
+                                    <div class="input-field" id="fre_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Dovecut">Dovecut (FRE)</option>
+                                            <option value="Kenedy_Street">Kenedy Street(FRE)</option>
+                                            <option value="Palm_Bridge">Palm Bridge (FRE)</option>
+                                            <option value="Kissy_Road_Market">Kissy Road Market (FRE)</option>
+                                            <option value="Tombo_Watloo">Tombo-Watloo (FRE)</option>
+                                            <option value="Lumley_Market">Lumley Market (FRE)</option>
+                                            <option value="Funkia_Market">Funkia Market (FRE)</option>
+                                            <option value="Aberdeen_Road_Market">Aberdeen Road Market (FRE)</option>
+                                            <option value="Ogoo_Farm_Market">Ogoo Farm Market (FRE)</option>
+                                            <option value="Congo_Market">Congo Market (FRE)</option>
+                                            <option value="Kroo_Town_Road_Market">Kroo Town Road Market  (FRE)</option>
+                                        </select>
+                                    </div>
+                                <!-- end of west matkets -->
+
+                                <!-- north_east_markets -->
+                                    <!-- bombali_markets -->
+                                    <div class="input-field" id="bom_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Central">Central (BOM)</option>
+                                            <option value="Church_Street">Church Street (BOM)</option>
+                                            <option value="Magburaka_Rd">Magburaka Rd (BOM)</option>
+                                            <option value="Makoth">Makoth (BOM)</option>
+                                            <option value="Mayolaw">Mayolaw (BOM)</option>
+                                        </select>
+                                    </div>
+                                    <!-- koinadugu_markets -->
+                                    <div class="input-field" id="koi_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Badalla">Badalla (KOI)</option>
+                                            <option value="Central_Market_Kabala">Central Market Kabala (KOI)</option>
+                                            <option value="Dogolie">Dogolie (KOI)</option>
+                                            <option value="Fadugu">Fadugu (KOI)</option>
+                                            <option value="Gbenekoro">Gbenekoro (KOI)</option>
+                                            <option value="Sakuta">Sakuta (KOI)</option>
+                                            <option value="Tenderhill">Tenderhill (KOI)</option>
+                                            <option value="Yogmaia">Yogmaia (KOI)</option>
+                                            <option value="Daresalam">Daresalam (KOI)</option>
+                                            <option value="Diang">Diang (KOI)</option>
+                                            <option value="Bamukoro">Bamukoro (KOI)</option>
+                                        </select>
+                                    </div>
+                                    <!-- tonkolili_markets -->
+                                    <div class="input-field" id="ton_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Bumbuna">Bumbuna (TON)</option>
+                                            <option value="Koindu">Koindu (TON)</option>
+                                            <option value="Mabarr_Konkorie">Mabarr Konkorie (TON)</option>
+                                            <option value="Magburaka">Magburaka (TON)</option>
+                                            <option value="Makali">Makali (TON)</option>
+                                            <option value="Mathoir">Mathoir (TON)</option>
+                                            <option value="Matotoka">Matotoka (TON)</option>
+                                            <option value="Mile_91">Mile 91 (TON)</option>
+                                            <option value="Yele">Yele (TON)</option>
+                                        </select>
+                                    </div>
+                                    <!-- falaba_markets -->
+                                    <div class="input-field" id="fal_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Dogoloya">Dogoloya (FAL)</option>
+                                            <option value="Manah">Manah (FAL)</option>
+                                            <option value="Gbindi">Gbindi (FAL)</option>
+                                            <option value="Karifaya">Karifaya (FAL)</option>
+                                            <option value="Gbentu">Gbentu (FAL)</option>
+                                            <option value="Dankawallie">Dankawallie (FAL)</option>
+                                            <option value="Seria">Seria (FAL)</option>
+                                            <option value="Deldu_Kamaron">Deldu Kamaron (FAL)</option>
+                                            <option value="Bumbukoro">Bumbukoro (FAL)</option>
+                                            <option value="Mansofinia">Mansofinia (FAL)</option>
+                                            <option value="Musaia">Musaia (FAL)</option>
+                                            <option value="Walia">Walia (FAL)</option>
+                                        </select>
+                                    </div>
+                                <!-- end of north_east markets -->
+
+                                <!-- north_west_markets -->
+                                    <!-- kambia markets -->
+                                    <div class="input-field" id="kam_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Bamoi">Bamoi (KAM)</option>
+                                            <option value="Kambia_Main_Market">Kambia Main Market (KAM)</option>
+                                            <option value="Madina">Madina (KAM)</option>
+                                            <option value="Rokpur">Rokpur(KAM)</option>
+                                        </select>
+                                    </div>
+                                    <!-- portloko markets -->
+                                    <div class="input-field" id="plo_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Foredugu">Foredugu (PLO)</option>
+                                            <option value="Gberray_Junction">Gberray Junction (PLO)</option>
+                                            <option value="Kalangba_Junction">Kalangba Junction (PLO)</option>
+                                            <option value="Kondato_Road">Kondato Road (PLO)</option>
+                                            <option value="Lunsar">Lunsar (PLO)</option>
+                                            <option value="Makiteh">Makiteh (PLO)</option>
+                                            <option value="Masaika">Masaika (PLO)</option>
+                                            <option value="Port_Loko">Port Loko (PLO)</option>
+                                            <option value="Wharf_Road">Wharf Road (PLO)</option>
+                                        </select>
+                                    </div>
+                                    <!-- karene markets -->
+                                    <div class="input-field" id="kar_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Rokutorloh">Rokutorloh (KAR)</option>
+                                            <option value="Foredugu_Karene">Foredugu Karene (KAR)</option>
+                                            <option value="Thambi">Thambi (KAR)</option>
+                                            <option value="Kamakwie">Kamakwie (KAR)</option>
+                                            <option value="Kamalo">Kamalo (KAR)</option>
+                                            <option value="Fintonia_Samaya">Fintonia/Samaya (KAR)</option>
+                                        </select>
+                                    </div>
+                                <!-- end of north_west markets -->
+
+                                <!-- south_markets -->
+                                    <!-- bo markets -->
+                                    <div class="input-field" id="bo_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Bandajuma">Bandajuma (BO)</option>
+                                            <option value="Bumpeh_Main_Market">Bumpeh Main Market (BO)</option>
+                                            <option value="Gbongo">Gbongo (BO)</option>
+                                            <option value="Gerihun">Gerihun (BO)</option>
+                                            <option value="Gondama">Gondama (BO)</option>
+                                            <option value="Koribondo">Koribondo (BO)</option>
+                                            <option value="Mile_30">Mile 30 (BO)</option>
+                                            <option value="Momajo">Momajo (BO)</option>
+                                            <option value="Shenge">Shenge (BO)</option>
+                                            <option value="Yakajie_Dowee">Yakajie Dowee (BO)</option>
+                                        </select>
+                                    </div>
+                                    <!-- bonthe markets -->
+                                    <div class="input-field" id="bon_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Congo_Market">Congo Market (BON)</option>
+                                            <option value="Congo">Congo (BON)</option>
+                                            <option value="Koiganya_Luma">Koiganya Luma (BON)</option>
+                                            <option value="Madina">Madina (BON)</option>
+                                            <option value="Mattru_central">Mattru central (BON)</option>
+                                            <option value="Mattru_Periodic">Mattru Periodic (BON)</option>
+                                            <option value="Moriba">Moriba (BON)</option>
+                                            <option value="Yargoi">Yargoi (BON)</option>
+                                        </select>
+                                    </div>
+                                    <!-- moyamba markets -->
+                                    <div class="input-field" id="moy_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Moyamba_Big_Market">Moyamba Big Market (MOY)</option>
+                                            <option value="Bradford">Bradford (MOY)</option>
+                                            <option value="Njagbahun_Junction">Njagbahun Junction (MOY)</option>
+                                            <option value="Kangahun">Kangahun (MOY)</option>
+                                            <option value="Moyamba_Junction">Moyamba Junction (MOY)</option>
+                                            <option value="Rotifunk">Rotifunk (MOY)</option>
+                                            <option value="Sembehun">Sembehun (MOY)</option>
+                                            <option value="Baja_Junction">Baja Junction (MOY)</option>
+                                            <option value="Mano_Dasse">Mano Dasse (MOY)</option>
+                                            <option value="Gbangbatoke">Gbangbatoke (MOY)</option>
+                                            <option value="Youndu_Fakai">Youndu Fakai (MOY)</option>
+                                            <option value="Bai_Largo">Bai-Largo (MOY)</option>
+                                            <option value="Moyamba_Munku_Market">Moyamba Munku Market (MOY)</option>
+                                            <option value="Mofombo">Mofombo (MOY)</option>
+                                            <option value="Mokonde">Mokonde (MOY)</option>
+                                        </select>
+                                    </div>
+                                    <!-- pujehun markets -->
+                                    <div class="input-field" id="puj_markets_div">
+                                        <select id="marketPlace" name="marketPlace">
+                                            <option value="" class="gray-text" required disabled selected>Choose a Market</option>
+                                            <option value="Bandajuma">Bandajuma (PUJ)</option>
+                                            <option value="Fonima">Fonima (PUJ)</option>
+                                            <option value="Gbondapi">Gbondapi (PUJ)</option>
+                                            <option value="Massa_Market">Massa Market (PUJ)</option>
+                                            <option value="Pujehun_Town">Pujehun Town (PUJ)</option>
+                                    </select>
+                                </div>
+                                <!-- end of south markets -->
+                                <!-- END OF MARKET NAMES -->
+
+                                <!-- market type -->
+                                <div class="input-field" id="market_type_div">
+                                    <select id="marketType" name="marketType">
+                                        <option value="" class="gray-text" required disabled selected>Choose a Market Type</option>
+                                        <option value="Daily">Daily</option>
+                                        <option value="Periodic">Periodic</option>
+                                        <option value="Farm_Gate">Farm Gate</option>
+                                    </select>
+                                </div>
+                                <!-- end of market type -->
+                                
+                                <div class="input-field">
+                                    <label for="mktEnumerator">Enumerator</label>
+                                    <input type="text" name="mktEnumerator" value="<%= enumerator.username %>" id="mktEnumerator" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="mktDate">Date</label>
+                                    <input type="text" name="mktDate" class="datepicker" id="mktDate" required>
+                                </div>
+                                <!-- product category -->
+                                <div class="input-field">
+                                    <select name="mktCategory" id="mktProductCategory" required>
+                                        <option value="" class="gray-text" required disabled selected>Choose Product Category</option>
+                                        <option value="Ag_Inputs">Ag. Inputs</option>
+                                        <option value="Cereals">Cereals</option>
+                                        <option value="Fishes">Fishes</option>
+                                        <option value="Forestries">Forestries</option>
+                                        <option value="Fruits">Fruits</option>
+                                        <option value="Livestock">Livestock</option>
+                                        <option value="Others">Others</option>
+                                        <option value="Pulses">Pulses</option>
+                                        <option value="Stimulants">Stimulants</option>
+                                        <option value="Tubers">Tubers</option>
+                                        <option value="Vegetables">Vegetables</option>
+                                    </select>
+                                </div>
+                                <!-- end of product category -->
+
+                                <!-- Ag. Input's products -->
+                                <div class="input-field" id="ag_inputs_products_div">
+                                    <select class="ag_inputs_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose an Ag-Input product</option>
+                                        <option value="Seed_rice">Seed rice</option>
+                                        <option value="Paddy_rice">Paddy rice</option>
+                                        <option value="Seed_groundnut">Seed groundnut</option>
+                                        <option value="Seet_cow_pea">Seet cow pea</option>
+                                        <option value="Seed_vegetable">Seed vegetable</option>
+                                        <option value="Cassava_cuttings">Cassava cuttings</option>
+                                        <option value="Sweet_pototo_vines">Sweet pototo vines</option>
+                                        <option value="Water_yam_set">Water yam set</option>
+                                        <option value="Maize_Seed">Maize Seed</option>
+                                        <option value="Palm_Oil_Seedlings">Palm Oil Seedlings</option>
+                                        <option value="Cacao_Seedlings">Cacao Seedlings</option>
+                                        <option value="Coffee_Seedlings">Coffee Seedlings</option>
+                                        <option value="Citrus_Seedlings">Citrus Seedlings</option>
+                                        <option value="Cashew_Seedlings">Cashew Seedlings</option>
+                                        <option value="Coconut_Seedlings">Coconut Seedlings</option>
+                                        <option value="Fertlizer_N:P:K ">Fertlizer, N:P:K 15:15:15</option>
+                                        <option value="Fertlizer_urea">Fertlizer, urea</option>
+                                        <option value="Herbicide">Herbicide</option>
+                                        <option value="Pesticide">Pesticide</option>
+                                        <option value="Fungicides">Fungicides</option>
+                                        <option value="Farm_labour">Farm labour</option>
+                                        <option value="Tractor">Tractor (land preparation)</option>
+                                    </select>  
+                                </div>
+                                <!-- end of Ag. Input's products -->
+
+                                <!-- cereal list -->
+                                <div class="input-field" id="cereal_products_div">
+                                    <select class="cereal_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose a cereal product</option>
+                                        <option id="Rice_imported" value="Rice_imported_milled">Rice, imported, milled</option>
+                                        <option id="Rice_local" value="Rice_local_milled_parboiled">Rice, local, milled, parboiled</option>
+                                        <option id="Rice_local_rough" value="Rice_local_rough">Rice, local, rough</option>
+                                        <option id="Rice_paddy_husk" value="Rice_paddy_husk">Rice, paddy, husk</option>
+                                        <option id="Maize_grain_(dried)" value="Maize_grain_dried">Maize grain (dried)</option>
+                                        <option id="Sorghum" value="Sorghum">Sorghum</option>
+                                        <option id="Millet_(finger)" value="Millet_finger">Millet (finger)</option>
+                                        <option id="Millet_(small)" value="Millet_small">Millet (small)</option>
+                                    </select>
+                                </div>
+                                <!-- end of cereal's products -->
+
+                                <!-- fishes list-->
+                                <div class="input-field" id="fish_products_div">
+                                    <select class="fish_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose a fish product</option>
+                                        <option value="Bonga_raw">Bonga (raw)</option>
+                                        <option value="Bonga_dried">Bonga (dried)</option>
+                                        <option value="Herring_raw">Herring (raw)</option>
+                                        <option value="Herring_dried">Herring (dried)</option>
+                                        <option value="Catfish_raw">Catfish (raw)</option>
+                                        <option value="Catfish_dried">Catfish (dried)</option>
+                                        <option value="Tilapia_raw">Tilapia (raw)</option>
+                                        <option value="Tilapia_dried">Tilapia (dried)</option>
+                                        <option value="Other_fish">Other fish</option>
+                                        <!-- <option value="Other_fish_raw">Other fish (raw)</option> -->
+                                        <!-- <option value="Other_fish_dried">Other fish (dried)</option> -->
+                                    </select>
+                                </div>
+                                <!-- fishes other input field -->
+                                <div class="input-field" id="fish_specific_input_div">
+                                    <label for="mktProductName">Input other fish</label>
+                                    <input type="text" name="mktProductName" id="mktProductName">
+                                </div>
+                                <!-- end of other input field -->
+                                <!-- end of fishes list -->
+
+                                <!-- forestry products -->
+                                <div class="input-field" id="forestry_products_div">
+                                    <select class="forestry_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose a forestry product</option>
+                                        <option value="Charcoal">Charcoal</option>
+                                        <option value="Fuel_wood">Fuel wood</option>
+                                        <option value="Broom">Broom</option>
+                                        <option value="Timber_pole">Timber, pole</option>
+                                        <option value="Timber_1x12x14">Timber (1x12x14)</option>
+                                        <option value="Timber_2x2x14">Timber (2x2x14)</option>
+                                        <option value="Timber_2x6x14">Timber (2x6x14)</option>
+                                    </select>
+                                </div>
+                                <!-- end of forestry products -->
+
+                                <!-- fruit products -->
+                                <div class="input-field" id="fruit_products_div">
+                                    <select class="fruit_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose a fruit product</option>
+                                        <option value="Plantain">Plantain</option>
+                                        <option value="Banana">Banana</option>
+                                        <option value="Mango">Mango</option>
+                                        <option value="Pineapple">Pineapple</option>
+                                        <option value="Orange">Orange</option>
+                                        <option value="Grapefruit">Grapefruit</option>
+                                        <option value="Tangerine">Tangerine</option>
+                                        <option value="Lime">Lime</option>
+                                        <option value="Avocado">Avocado</option>
+                                        <option value="Pawpaw">Pawpaw</option>
+                                        <option value="Guava">Guava</option>
+                                    </select>
+                                </div>
+                                <!-- end of fruit products -->
+
+                                <!-- livestock products -->
+                                <div class="input-field" id="livestock_products_div">
+                                    <select class="livestock_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose a livestock product</option>
+                                        <option value="Eggs_chicken">Eggs, chicken</option>
+                                        <option value="Cow_milk">Cow milk</option>
+                                        <option value="Cow_meat">Cow meat</option>
+                                        <option value="Pig_meat_pork">Pig meat (pork)</option>
+                                        <option value="Chicken_live_adult">Chicken, live adult</option>
+                                        <option value="Goat_live_adult">Goat, live adult</option>
+                                        <option value="Sheep_live_adult">Sheep, live adult</option>
+                                        <option value="Pig_live_adult">Pig, live adult</option>
+                                        <option value="Cattle_live_adult">Cattle, live adult</option>
+                                    </select>
+                                </div>
+                                <!-- end of livestock products -->
+
+                                <!-- other products -->
+                                <div class="input-field" id="other_products_div">
+                                    <select class="other_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose an other product</option>
+                                        <option value="Cashew_nuts">Cashew nuts</option>
+                                        <option value="Palm_oil">Palm oil</option>
+                                        <option value="Coconut_oil">Coconut oil</option>
+                                        <option value="Palm_kernal_nut_oil">Palm kernal nut oil</option>
+                                    </select>
+                                </div>
+                                <!-- end of other products -->
+
+                                <!-- pulses products -->
+                                <div class="input-field" id="pulses_products_div">
+                                    <select class="pulses_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose pulses product</option>
+                                        <option value="Groundnut_unshelled">Groundnut (unshelled)</option>
+                                        <option value="Groundnut_shelled">Groundnut (shelled)</option>
+                                        <option value="Sesame">Sesame</option>
+                                        <option value="Cowpea">Cowpea</option>
+                                        <option value="Broad_beans">Broad beans</option>
+                                        <option value="Pigeon_peas">Pigeon peas</option>
+                                    </select>
+                                </div>
+                                <!-- end of pulses products -->
+
+                                <!-- stimulant products -->
+                                <div class="input-field" id="stimulant_products_div">
+                                    <select class="stimulant_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose a stimulant product</option>
+                                        <option value="Cocoa">Cocoa</option>
+                                        <option value="Coffee">Coffee</option>
+                                        <option value="Kola_nut">Kola nut</option>
+                                        <option value="Ginger">Ginger</option>
+                                    </select>
+                                </div>
+                                <!-- end of stimulant products -->
+
+                                <!-- tubers products -->
+                                <div class="input-field" id="tuber_products_div">
+                                    <select class="tuber_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose a tuber product</option>
+                                        <option value="Cassava_tubers">Cassava (tubers)</option>
+                                        <option value="Cassava_gari">Cassava (gari)</option>
+                                        <option value="Sweet_potato">Sweet potato</option>
+                                        <option value="Water_yam">Water yam</option>
+                                        <option value="Coco_yam">Coco yam</option>
+                                        <option value="Chinese_yam">Chinese yam</option>
+                                    </select>
+                                </div>
+                                <!-- end of tubers products -->
+
+                                <!-- vegetables products -->
+                                <div class="input-field" id="vegetable_products_div">
+                                    <select class="vegetable_products" name="mktProductName" id="mktProductName">
+                                        <option value="" class="gray-text" disabled selected>Choose a vegetable product</option>
+                                        <option value="Okra">Okra</option>
+                                        <option value="Garden_eggs">Garden eggs</option>
+                                        <option value="Tomatoes">Tomatoes</option>
+                                        <option value="Pepper_small_hot">Pepper, small (hot)</option>
+                                        <option value="Pepper_large_sweet">Pepper, large (sweet)</option>
+                                        <option value="Water_melon">Water melon</option>
+                                        <option value="Cucumber">Cucumber</option>
+                                        <option value="Pumpkin">Pumpkin</option>
+                                        <option value="Onions_bulb">Onions, bulb</option>
+                                        <option value="Potato_irish">Potato, irish</option>
+                                        <option value="Cabbage">Cabbage</option>
+                                        <option value="Lettuce">Lettuce</option>
+                                        <option value="Carrot">Carrot</option>
+                                    </select>
+                                </div>
+                                <!-- end of vegetables products -->
+
+                                <!-- <div class="input-field">
+                                    <select name="mktProductName" id="mktProductName" required>
+                                        <option value="" class="gray-text" required disabled selected>Choose Product</option>
+                                        <option  id="rice" value="Rice">Rice</option>
+                                        <option  id="sweet_potatoe" value="Sweet Potatoe">Sweet Potatoe</option>
+                                        <option  id="groundnut" value="Groundnut">Groundnut</option>
+                                        <option  id="cassava" value="Cassava">Cassava</option>
+                                        <option  id="maize" value="Maize">Maize</option>
+                                        <option  id="papper" value="Pepper">Pepper</option>
+                                        <option  id="palmoil" value="Palm Oil">Palm Oil</option>
+                                        <option  id="Cacao" value="Cacao">Cacao</option>
+                                        <option  id="coffee" value="Coffee">Coffee</option>
+                                    </select>
+                                </div> -->
+                            
+                        </li>
+                        <!-- Agricultural Input for Wholesales Price -->
+                        <li>
+                            <div class="collapsible-header">Wholesales Price</div>
+                                <div class="collapsible-body">
+                                    <div class="input-field">
+                                        <!-- <label for="WHS_Unit">Unit Of Measure</label>
+                                        <input type="text" name="WHS_Unit" id="WHS_Unit" required> -->
+                                        <select name="WHS_Unit" id="WHS_Unit" required>
+                                            <option value="" class="gray-text" required disabled selected>Wholesales Unit of Measure</option>
+                                            <option  id="Cup" value="Cup">Cup</option>
+                                            <option  id="Bag" value="Bag">Bag</option>
+                                            <option  id="Basket" value="Basket">Basket</option>
+                                            <option  id="Batta" value="Batta">Batta</option>
+                                            <option  id="Bowl" value="Bowl">Bowl</option>
+                                            <option  id="Bundle" value="Bundle">Bundle</option>
+                                            <option  id="Buttercup" value="Buttercup">Butter Cup</option>
+                                            <option  id="Dozen" value="Dozen">Dozen</option>
+                                            <option  id="Finger" value="Finger">Finger</option>
+                                            <option  id="Head" value="Head">Head</option>
+                                            <option  id="Live" value="Live">Live</option>
+                                            <option  id="Lot" value="Lot">Lot</option>
+                                            <option  id="Number" value="Number">Number</option>
+                                            <option  id="Pile" value="Pile">Pile</option>
+                                            <option  id="Pint" value="Pint">Pint</option>
+                                            <option  id="Pound" value="Pound">Pound</option>
+                                            <option  id="Rubber" value="Rubber">Rubber</option>
+                                            <option  id="SC" value="SC">SC</option>
+                                            <option  id="Single" value="Single">Single</option>
+                                            <option  id="Spoon" value="Spoon">Spoon</option>
+                                            <option  id="Tie" value="Tie">Tie</option>
+                                            <option  id="Bushel" value="Bushel">Bushel</option>
+                                            <option  id="Packet" value="Packet">Packet</option>
+                                            <option  id="Set" value="Set">Set</option>
+                                            <option  id="Litre" value="Litre">Litre</option>
+                                            <option  id="T_P" value="T/P">T/P</option>
+                                            <option  id="Other" value="Other">Other (specify)</option>
+                                        </select>
+                                    </div>
+                                
+                                    <div class="input-field kg">
+                                        <label for="WHS_Weight">Weight (Kg)</label>
+                                        <input type="number" step="any" min="0" name="WHS_Weight" id="WHS_Weight">
+                                    </div>
+                                    <!-- removed the maximum max="10" from the input field -->
+                                    <!-- <div class="input-field gallon">
+                                        <label for="WHS_Weight">Weight (gallon)</label>
+                                        <input type="number" name="WHS_Weight" id="WHS_Weight">
+                                    </div> -->
+
+                                    <div class="input-field">
+                                        <label for="WHS_Price">Price(Leone)</label>
+                                        <input type="number" name="WHS_Price" id="WHS_Price" required>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+                        </li>
+                        <!-- Agricultural Input for Retail Price -->
+                        <li>
+                            <div class="collapsible-header">Retail Price</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <!-- <label for="RET_Unit">Unit Of Measure</label>
+                                    <input type="text" name="RET_Unit" id="RET_Unit" required> -->
+                                    <select name="RET_Unit" id="RET_Unit" required>
+                                        <option value="" class="gray-text" required disabled selected>Retail Unit of Measure</option>
+                                        <option  id="Cup" value="Cup">Cup</option>
+                                        <option  id="Bag" value="Bag">Bag</option>
+                                        <option  id="Basket" value="Basket">Basket</option>
+                                        <option  id="Batta" value="Batta">Batta</option>
+                                        <option  id="Bowl" value="Bowl">Bowl</option>
+                                        <option  id="Bundle" value="Bundle">Bundle</option>
+                                        <option  id="Buttercup" value="Buttercup">Butter Cup</option>
+                                        <option  id="Dozen" value="Dozen">Dozen</option>
+                                        <option  id="Finger" value="Finger">Finger</option>
+                                        <option  id="Head" value="Head">Head</option>
+                                        <option  id="Live" value="Live">Live</option>
+                                        <option  id="Lot" value="Lot">Lot</option>
+                                        <option  id="Number" value="Number">Number</option>
+                                        <option  id="Pile" value="Pile">Pile</option>
+                                        <option  id="Pint" value="Pint">Pint</option>
+                                        <option  id="Pound" value="Pound">Pound</option>
+                                        <option  id="Rubber" value="Rubber">Rubber</option>
+                                        <option  id="SC" value="SC">SC</option>
+                                        <option  id="Single" value="Single">Single</option>
+                                        <option  id="Spoon" value="Spoon">Spoon</option>
+                                        <option  id="Tie" value="Tie">Tie</option>
+                                        <option  id="Bushel" value="Bushel">Bushel</option>
+                                        <option  id="Packet" value="Packet">Packet</option>
+                                        <option  id="Set" value="Set">Set</option>
+                                        <option  id="Litre" value="Litre">Litre</option>
+                                        <option  id="T/P" value="T/P">T/P</option>
+                                        <option  id="Other" value="Other">Other (specify)</option>
+                                    </select>
+                                </div>
+                                <div class="input-field kg">
+                                    <label for="RET_Weight">Weight(kg)</label>
+                                    <input type="number" step="any" min="0" name="RET_Weight" id="RET_Weight" required>
+                                </div>
+                                <!-- <div class="input-field allong">
+                                    <label for="RET_Weight">Weight(pint)</label>
+                                    <input type="number" name="RET_Weight" id="RET_Weight" required>
+                                </div> -->
+
+                                <div class="input-field">
+                                    <label for="RET_Price">Price(Leone)</label>
+                                    <input type="number" name="RET_Price" id="RET_Price" required>
+                                </div>
+                            </div>
+                        </li>
+                        <!--Farm Gate input-->
+                        <li>
+                            <div class="collapsible-header">Farm Gate Price</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <!-- <label for="FG_Unit">Unit Of Measure</label>
+                                    <input type="text" name="FG_Unit" id="FG_Unit" required> -->
+                                    <select name="FG_Unit" id="FG_Unit" required>
+                                        <option value="" class="gray-text" required disabled selected>Retail Unit of Measure</option>
+                                        <option  id="Cup" value="Cup">Cup</option>
+                                        <option  id="Bag" value="Bag">Bag</option>
+                                        <option  id="Basket" value="Basket">Basket</option>
+                                        <option  id="Batta" value="Batta">Batta</option>
+                                        <option  id="Bowl" value="Bowl">Bowl</option>
+                                        <option  id="Bundle" value="Bundle">Bundle</option>
+                                        <option  id="Buttercup" value="Buttercup">Butter Cup</option>
+                                        <option  id="Dozen" value="Dozen">Dozen</option>
+                                        <option  id="Finger" value="Finger">Finger</option>
+                                        <option  id="Head" value="Head">Head</option>
+                                        <option  id="Live" value="Live">Live</option>
+                                        <option  id="Lot" value="Lot">Lot</option>
+                                        <option  id="Number" value="Number">Number</option>
+                                        <option  id="Pile" value="Pile">Pile</option>
+                                        <option  id="Pint" value="Pint">Pint</option>
+                                        <option  id="Pound" value="Pound">Pound</option>
+                                        <option  id="Rubber" value="Rubber">Rubber</option>
+                                        <option  id="SC" value="SC">SC</option>
+                                        <option  id="Single" value="Single">Single</option>
+                                        <option  id="Spoon" value="Spoon">Spoon</option>
+                                        <option  id="Tie" value="Tie">Tie</option>
+                                        <option  id="Bushel" value="Bushel">Bushel</option>
+                                        <option  id="Packet" value="Packet">Packet</option>
+                                        <option  id="Set" value="Set">Set</option>
+                                        <option  id="Litre" value="Litre">Litre</option>
+                                        <option  id="T/P" value="T/P">T/P</option>
+                                        <option  id="Other" value="Other">Other (specify)</option>
+                                    </select>
+                                </div>
+                                <div class="input-field kg">
+                                    <label for="FG_Weight">Weight (Kg)</label>
+                                    <input type="number" step="any" min="0" name="FG_Weight" id="FG_Weight">
+                                </div>
+                                <!-- <div class="input-field gallon">
+                                    <label for="FG_Weight">Weight (gallon)</label>
+                                    <input type="number" name="FG_Weight" id="FG_Weight">
+                                </div> -->
+
+                                <div class="input-field">
+                                    <label for="FG_Price">Price(Leone)</label>
+                                    <input type="number" name="FG_Price" id="FG_Price" required>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <input class="btn btn-small btn-extend blue lighten-2 white-text" id="btn-new-mktData" type="submit" value="send">
+                    </div>
+                </div>
+            </div>
+    </form>
+</section>

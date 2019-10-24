@@ -1,0 +1,1045 @@
+<!-- scripts -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+<script src="js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+<script src="js/wow.min.js"></script>
+
+<script>
+    $(function () {
+        new WOW().init();
+        $('.sidenav').sidenav();
+        $('select').formSelect();
+
+        // for HTML5 "required" attribute
+        $("select[required]").css({
+            display: "inline",
+            height: 0,
+            padding: 0,
+            width: 0
+        });
+        $('.collapsible').collapsible();
+        $('.datepicker').datepicker();
+
+        // Gallon for Palm Oil
+        // $('#kg_div').hide();
+        // $('#gallon_div').hide();
+        // $('#products').on('change', function () {
+        //     if ($(this).val() == 'rice' || $(this).val() == 'sweet_potatoe' || $(this).val() ==
+        //         'groundnut' || $(this).val() == 'cassava' || $(this).val() == 'maize' || $(this)
+        //         .val() == 'papper' || $(this).val() == 'Cacao' || $(this).val() == 'coffee') {
+        //         $('#kg_div').show();
+        //         $('#gallon_div').hide();
+        //     } else if ($(this).val() == 'palmoil') {
+        //         $('#kg_div').hide();
+        //         $('#gallon_div').show();
+        //     }
+        // })
+
+        // hide all district by default
+        $('#East_Districts_Div').hide();
+        $('#West_Districts_Div').hide();
+        $('#North_East_Districts_Div').hide();
+        $('#North_West_Districts_Div').hide();
+        $('#South_Districts_Div').hide();
+
+        // hide all east district markets by defaults
+        function east() {
+            $('#kai_markets_div').hide();
+            $('#ken_markets_div').hide();
+            $('#kon_markets_div').hide();
+        }
+        $('#kai_markets_div').hide();
+        $('#ken_markets_div').hide();
+        $('#kon_markets_div').hide();
+
+        // hide all west district markets by defaults
+        function west() {
+            $('#fre_markets_div').hide();
+        }
+        $('#fre_markets_div').hide();
+
+        // hide all north east district markets by defaults
+        function north_east() {
+            $('#bom_markets_div').hide();
+            $('#koi_markets_div').hide();
+            $('#ton_markets_div').hide();
+            $('#fal_markets_div').hide();
+        }
+        $('#bom_markets_div').hide();
+        $('#koi_markets_div').hide();
+        $('#ton_markets_div').hide();
+        $('#fal_markets_div').hide();
+
+        // hide all north west district markets by default
+        function north_west() {
+            $('#kam_markets_div').hide();
+            $('#plo_markets_div').hide();
+            $('#kar_markets_div').hide();
+        }
+        $('#kam_markets_div').hide();
+        $('#plo_markets_div').hide();
+        $('#kar_markets_div').hide();
+
+        // hide all south district markets by default
+        function south() {
+            $('#bo_markets_div').hide();
+            $('#bon_markets_div').hide();
+            $('#moy_markets_div').hide();
+            $('#puj_markets_div').hide();
+        }
+        $('#bo_markets_div').hide();
+        $('#bon_markets_div').hide();
+        $('#moy_markets_div').hide();
+        $('#puj_markets_div').hide();
+
+        // hide market type by default
+        $('#market_type_div').hide();
+        
+        // hide all chiefdoms by default
+        // west 
+        $('#West_Chiefdom_Div').hide();
+        // east
+        $('#Kai_Chiefdom_Div').hide();
+        $('#Ken_Chiefdom_Div').hide();
+        $('#Kon_Chiefdom_Div').hide();
+        // north east
+        $('#Bom_Chiefdom_Div').hide();
+        $('#Koi_Chiefdom_Div').hide();
+        $('#Ton_Chiefdom_Div').hide();
+        // north west
+        $('#Kam_Chiefdom_Div').hide();
+        $('#Por_Chiefdom_Div').hide();
+        // south
+        $('#Bo_Chiefdom_Div').hide();
+        $('#Bon_Chiefdom_Div').hide();
+        $('#Moy_Chiefdom_Div').hide();
+        $('#Puj_Chiefdom_Div').hide();
+
+        function hideChiefdoms(){
+            // north east
+            $('#Bom_Chiefdom_Div').hide();
+            $('#Koi_Chiefdom_Div').hide();
+            $('#Ton_Chiefdom_Div').hide();
+            // north west
+            $('#Kam_Chiefdom_Div').hide();
+            $('#Por_Chiefdom_Div').hide();
+            // south
+            $('#Bo_Chiefdom_Div').hide();
+            $('#Bon_Chiefdom_Div').hide();
+            $('#Moy_Chiefdom_Div').hide();
+            $('#Puj_Chiefdom_Div').hide();
+        }
+
+        function hideChiefdomForNorthEast(){
+            // west 
+            $('#West_Chiefdom_Div').hide();
+            // east
+            $('#Kai_Chiefdom_Div').hide();
+            $('#Ken_Chiefdom_Div').hide();
+            $('#Kon_Chiefdom_Div').hide();
+            // north west
+            $('#Kam_Chiefdom_Div').hide();
+            $('#Por_Chiefdom_Div').hide();
+            // south
+            $('#Bo_Chiefdom_Div').hide();
+            $('#Bon_Chiefdom_Div').hide();
+            $('#Moy_Chiefdom_Div').hide();
+            $('#Puj_Chiefdom_Div').hide();
+        }
+
+        function hideChiefdomForNorthWest(){
+            // west 
+            $('#West_Chiefdom_Div').hide();
+            // east
+            $('#Kai_Chiefdom_Div').hide();
+            $('#Ken_Chiefdom_Div').hide();
+            $('#Kon_Chiefdom_Div').hide();
+            // north east
+            $('#Bom_Chiefdom_Div').hide();
+            $('#Koi_Chiefdom_Div').hide();
+            $('#Ton_Chiefdom_Div').hide();
+            // south
+            $('#Bo_Chiefdom_Div').hide();
+            $('#Bon_Chiefdom_Div').hide();
+            $('#Moy_Chiefdom_Div').hide();
+            $('#Puj_Chiefdom_Div').hide();
+        }
+
+        function hideChiefdomForSouth(){
+            // west 
+            $('#West_Chiefdom_Div').hide();
+            // east
+            $('#Kai_Chiefdom_Div').hide();
+            $('#Ken_Chiefdom_Div').hide();
+            $('#Kon_Chiefdom_Div').hide();
+            // north east
+            $('#Bom_Chiefdom_Div').hide();
+            $('#Koi_Chiefdom_Div').hide();
+            $('#Ton_Chiefdom_Div').hide();
+            // north west
+            $('#Kam_Chiefdom_Div').hide();
+            $('#Por_Chiefdom_Div').hide();
+        }
+
+        // check the selected region and display it districts
+        $('#mktRegion').on('change', function() {
+            if ($(this).val() == 'WEST') {
+                $('#East_Districts_Div').hide();
+                $('#North_East_Districts_Div').hide();
+                $('#North_West_Districts_Div').hide();
+                $('#South_Districts_Div').hide();
+                $('#West_Districts_Div').show();
+            } else if ($(this).val() == 'EAST') {
+                $('#West_Districts_Div').hide();
+                $('#North_East_Districts_Div').hide();
+                $('#North_West_Districts_Div').hide();
+                $('#South_Districts_Div').hide();
+                $('#East_Districts_Div').show();
+            } else if ($(this).val() == 'NORTH_EAST') {
+                $('#West_Districts_Div').hide();
+                $('#East_Districts_Div').hide();
+                $('#North_West_Districts_Div').hide();
+                $('#South_Districts_Div').hide();
+                $('#North_East_Districts_Div').show();
+            } else if ($(this).val() == 'NORTH_WEST') {
+                $('#West_Districts_Div').hide();
+                $('#East_Districts_Div').hide();
+                $('#North_East_Districts_Div').hide();
+                $('#South_Districts_Div').hide();
+                $('#North_West_Districts_Div').show();
+            } else if ($(this).val() == 'SOUTH') {
+                $('#West_Districts_Div').hide();
+                $('#East_Districts_Div').hide();
+                $('#North_East_Districts_Div').hide();
+                $('#North_West_Districts_Div').hide();
+                $('#South_Districts_Div').show();
+            }
+        });
+
+        // check the select district and display it markets
+        $('.East_Districts').on('change', function () {
+            // calling all the hide functions except the east
+            west();
+            north_east();
+            north_west();
+            south();
+
+            // check what value was selected
+            if ($(this).val() == 'Kaliahun') {
+                $('#ken_markets_div').hide();
+                $('#kon_markets_div').hide();
+                $('#kai_markets_div').show();
+                $('#Kai_Chiefdom_Div').show(); // displaying the kaliahun chiefdoms
+                $('#market_type_div').show();
+                $('#West_Chiefdom_Div').hide();
+                $('#Ken_Chiefdom_Div').hide();
+                $('#Kon_Chiefdom_Div').hide();
+                hideChiefdoms();
+            } else if( $(this).val() == 'Kenema' ){
+                $('#ken_markets_div').show();
+                $('#kai_markets_div').hide();
+                $('#kon_markets_div').hide();
+                $('#market_type_div').show();
+                $('#Ken_Chiefdom_Div').show(); // displaying the kenema chiefdoms
+                $('#West_Chiefdom_Div').hide();
+                $('#Kai_Chiefdom_Div').hide();
+                $('#Kon_Chiefdom_Div').hide();
+                hideChiefdoms();
+            } else if( $(this).val() == 'Kono' ){
+                $('#kai_markets_div').hide();
+                $('#ken_markets_div').hide();
+                $('#kon_markets_div').show();
+                $('#market_type_div').show();
+                $('#Kon_Chiefdom_Div').show(); // displaying the kono chiefdoms
+                $('#West_Chiefdom_Div').hide();
+                $('#Kai_Chiefdom_Div').hide();
+                $('#Ken_Chiefdom_Div').hide();
+                hideChiefdoms();
+            }
+        });
+
+        // west district markets function
+        $('.West_Districts').on('change', function () {
+            // hide all hide market function except the west
+            east();
+            north_east();
+            north_west();
+            south();
+
+            $('#fre_markets_div').show();
+            $('#market_type_div').show();
+            $('#West_Chiefdom_Div').show();
+            // east
+            $('#Kai_Chiefdom_Div').hide();
+            $('#Ken_Chiefdom_Div').hide();
+            $('#Kon_Chiefdom_Div').hide();
+            // north east
+            $('#Bom_Chiefdom_Div').hide();
+            $('#Koi_Chiefdom_Div').hide();
+            $('#Ton_Chiefdom_Div').hide();
+            // north west
+            $('#Kam_Chiefdom_Div').hide();
+            $('#Por_Chiefdom_Div').hide();
+            // south
+            $('#Bo_Chiefdom_Div').hide();
+            $('#Bon_Chiefdom_Div').hide();
+            $('#Moy_Chiefdom_Div').hide();
+            $('#Puj_Chiefdom_Div').hide();
+        });
+
+        // north east district markets change function
+        $('.North_East_Districts').on('change', function () {
+            // calling all hide market functions except north-east
+            east();
+            west();
+            north_west();
+            south();
+
+            // check which value is selected
+            if ($(this).val() == 'Bombali') {
+                $('#bom_markets_div').show();
+                $('#koi_markets_div').hide();
+                $('#ton_markets_div').hide();
+                $('#fal_markets_div').hide();
+                $('#market_type_div').show();
+                $('#Bom_Chiefdom_Div').show(); // display all chiefdoms
+                $('#Koi_Chiefdom_Div').hide();
+                $('#Ton_Chiefdom_Div').hide();
+                hideChiefdomForNorthEast();
+            } else if( $(this).val() == 'Koinadugu' ){
+                $('#bom_markets_div').hide();
+                $('#koi_markets_div').show();
+                $('#ton_markets_div').hide();
+                $('#fal_markets_div').hide();
+                $('#market_type_div').show();
+                $('#Koi_Chiefdom_Div').show(); // display the chiefdoms
+                $('#Bom_Chiefdom_Div').hide();
+                $('#Ton_Chiefdom_Div').hide();
+                hideChiefdomForNorthEast();
+            } else if( $(this).val() == 'Tonkolili' ){
+                $('#bom_markets_div').hide();
+                $('#koi_markets_div').hide();
+                $('#ton_markets_div').show();
+                $('#fal_markets_div').hide();
+                $('#market_type_div').show();
+                $('#Ton_Chiefdom_Div').show(); // display the chiefdoms
+                $('#Koi_Chiefdom_Div').hide();
+                $('#Bom_Chiefdom_Div').hide();
+                hideChiefdomForNorthEast();
+            } else if( $(this).val() == 'Falaba' ){
+                $('#bom_markets_div').hide();
+                $('#koi_markets_div').hide();
+                $('#ton_markets_div').hide();
+                $('#fal_markets_div').show();
+                $('#market_type_div').show();
+                hideChiefdoms();
+                hideChiefdomForNorthEast();
+                hideChiefdomForNorthWest();
+                hideChiefdomForSouth();
+            }
+
+        });
+
+        // north west district markets change function
+        $('.North_West_Districts').on('change', function () {
+            // calling all the hide markets functions expect north west
+            east();
+            west();
+            north_east();
+            south();
+
+            // check which value is selected
+            if ($(this).val() == 'Kambia') {
+                $('#kam_markets_div').show();
+                $('#plo_markets_div').hide();
+                $('#kar_markets_div').hide();
+                $('#market_type_div').show();
+                $('#Kam_Chiefdom_Div').show(); // display the chiefdoms
+                $('#Por_Chiefdom_Div').hide();
+                hideChiefdomForNorthWest();
+            } else if( $(this).val() == 'PortoLoko' ){
+                $('#kam_markets_div').hide();
+                $('#plo_markets_div').show();
+                $('#kar_markets_div').hide();
+                $('#market_type_div').show();
+                $('#Por_Chiefdom_Div').show(); // display the chiefdoms
+                $('#Kam_Chiefdom_Div').hide();
+                hideChiefdomForNorthWest();
+            } else if( $(this).val() == 'Karene' ){
+                $('#kam_markets_div').hide();
+                $('#plo_markets_div').hide();
+                $('#kar_markets_div').show();
+                $('#market_type_div').show();
+                hideChiefdoms();
+                hideChiefdomForNorthEast();
+                hideChiefdomForNorthWest();
+                hideChiefdomForSouth();
+            }
+        });
+
+        // south district markets change function
+        $('.South_Districts').on('change', function () {
+            // calling the hide markets functions except the south
+            east();
+            west();
+            north_east();
+            north_west();
+
+            // check for the selected value
+            if ($(this).val() == 'Bo') {
+                $('#bo_markets_div').show();
+                $('#bon_markets_div').hide();
+                $('#moy_markets_div').hide();
+                $('#puj_markets_div').hide();
+                $('#market_type_div').show();
+                $('#Bo_Chiefdom_Div').show(); // display the chiefdoms
+                $('#Bon_Chiefdom_Div').hide();
+                $('#Moy_Chiefdom_Div').hide();
+                $('#Puj_Chiefdom_Div').hide();
+                hideChiefdomForSouth();
+            } else if( $(this).val() == 'Bonthe' ){
+                $('#bo_markets_div').hide();
+                $('#bon_markets_div').show();
+                $('#moy_markets_div').hide();
+                $('#puj_markets_div').hide();
+                $('#market_type_div').show();
+                $('#Bon_Chiefdom_Div').show(); // display the chiefdoms
+                $('#Bo_Chiefdom_Div').hide();
+                $('#Moy_Chiefdom_Div').hide();
+                $('#Puj_Chiefdom_Div').hide();
+                hideChiefdomForSouth();
+            } else if( $(this).val() == 'Moyamba' ){
+                $('#bo_markets_div').hide();
+                $('#bon_markets_div').hide();
+                $('#moy_markets_div').show();
+                $('#puj_markets_div').hide();
+                $('#Moy_Chiefdom_Div').show(); // display the chiefdoms
+                $('#Bo_Chiefdom_Div').hide();
+                $('#Bon_Chiefdom_Div').hide();
+                $('#Puj_Chiefdom_Div').hide();
+                hideChiefdomForSouth();
+            } else if( $(this).val() == 'Pujehun' ){
+                $('#bo_markets_div').hide();
+                $('#bon_markets_div').hide();
+                $('#moy_markets_div').hide();
+                $('#puj_markets_div').show();
+                $('#market_type_div').show();
+                $('#Puj_Chiefdom_Div').show(); // display the chiefdoms
+                $('#Bon_Chiefdom_Div').hide();
+                $('#Moy_Chiefdom_Div').hide();
+                $('#Bo_Chiefdom_Div').hide();
+                hideChiefdomForSouth();
+            }
+        });
+
+        // hide all products by default
+        $('#ag_inputs_products_div').hide();
+        $('#cereal_products_div').hide();
+        $('#fish_products_div').hide();
+        $('#forestry_products_div').hide();
+        $('#fruit_products_div').hide();
+        $('#livestock_products_div').hide();
+        $('#other_products_div').hide();
+        $('#pulses_products_div').hide();
+        $('#stimulant_products_div').hide();
+        $('#tuber_products_div').hide();
+        $('#vegetable_products_div').hide();
+
+
+        // product category on change function check 
+        $('#mktProductCategory').on('change', function () {
+            // check what value was selected
+            // ag-input check
+            if ($(this).val() == 'Ag_Inputs') {
+                $('#ag_inputs_products_div').show();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+                // cereals input check 
+            } else if ($(this).val() == 'Cereals') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').show();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // fishes input check
+            } else if ($(this).val() == 'Fishes') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').show();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // forestry input check
+            } else if ($(this).val() == 'Forestries') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').show();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // fruits input check
+            } else if ($(this).val() == 'Fruits') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').show();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // livestock input check
+            } else if ($(this).val() == 'Livestock') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').show();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // other input check
+            } else if ($(this).val() == 'Others') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').show();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // pulses input check
+            } else if ($(this).val() == 'Pulses') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').show();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // stimulant input check
+            } else if ($(this).val() == 'Stimulants') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').show();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // tuber input check
+            } else if ($(this).val() == 'Tubers') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').show();
+                $('#vegetable_products_div').hide();
+
+                // vegetable input check
+            } else if ($(this).val() == 'Vegetables') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').show();
+            }
+        });
+
+
+        //hide all stock market name
+        $('#fre_markets_div').hide()
+        $('#kai_markets_div').hide()
+        $('#ken_markets_div').hide()
+        $('#kon_markets_div').hide()
+        $('#bom_markets_div').hide()
+        $('#fal_markets_div').hide()
+        $('#koi_markets_div').hide()
+        $('#ton_markets_div').hide()
+        $('#kam_markets_div').hide()
+        $('#plo_markets_div').hide()
+        $('#kar_markets_div').hide()
+        $('#bo_markets_div').hide()
+        $('#bon_markets_div').hide()
+        $('#moy_markets_div').hide()
+        $('#puj_markets_div').hide()
+
+        // product category on change function check 
+        $('#msuProductCategory').on('change', function () {
+            // check what value was selected
+            // ag-input check
+            if ($(this).val() == 'Ag_Inputs') {
+                $('#ag_inputs_products_div').show();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+                // cereals input check 
+            } else if ($(this).val() == 'Cereals') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').show();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // fishes input check
+            } else if ($(this).val() == 'Fishes') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').show();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // forestry input check
+            } else if ($(this).val() == 'Forestries') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').show();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // fruits input check
+            } else if ($(this).val() == 'Fruits') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').show();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // livestock input check
+            } else if ($(this).val() == 'Livestock') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').show();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // other input check
+            } else if ($(this).val() == 'Others') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').show();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // pulses input check
+            } else if ($(this).val() == 'Pulses') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').show();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // stimulant input check
+            } else if ($(this).val() == 'Stimulants') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').show();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').hide();
+
+                // tuber input check
+            } else if ($(this).val() == 'Tubers') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').show();
+                $('#vegetable_products_div').hide();
+
+                // vegetable input check
+            } else if ($(this).val() == 'Vegetables') {
+                $('#ag_inputs_products_div').hide();
+                $('#cereal_products_div').hide();
+                $('#fish_products_div').hide();
+                $('#forestry_products_div').hide();
+                $('#fruit_products_div').hide();
+                $('#livestock_products_div').hide();
+                $('#other_products_div').hide();
+                $('#pulses_products_div').hide();
+                $('#stimulant_products_div').hide();
+                $('#tuber_products_div').hide();
+                $('#vegetable_products_div').show();
+            }
+        });
+        // Stock Level
+        $('#ttmDistrict').on('change', function () {
+            if ($(this).val() == 'West_Area') {
+                $('#fre_markets_div').show()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Kaliahun') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').show()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Kenema') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').show()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Kono') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').show()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Bombali') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').show()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Falaba') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').show()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Koinadugu') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').show()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Tonkolili') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').show()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Kambia') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').show()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Porto_Loko') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').show()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Bo') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').show()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Karene') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').show()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Bonthe') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').show()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Moyamba') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').show()
+                $('#puj_markets_div').hide()
+            } else if ($(this).val() == 'Pujehun') {
+                $('#fre_markets_div').hide()
+                $('#kai_markets_div').hide()
+                $('#ken_markets_div').hide()
+                $('#kon_markets_div').hide()
+                $('#bom_markets_div').hide()
+                $('#fal_markets_div').hide()
+                $('#koi_markets_div').hide()
+                $('#ton_markets_div').hide()
+                $('#kam_markets_div').hide()
+                $('#plo_markets_div').hide()
+                $('#kar_markets_div').hide()
+                $('#bo_markets_div').hide()
+                $('#bon_markets_div').hide()
+                $('#moy_markets_div').hide()
+                $('#puj_markets_div').show()
+            }
+
+        });
+
+        // specific products change function
+        // hide other input fields by default
+        $('#fish_specific_input_div').hide();
+
+        $('.fish_products').on('change', function(){
+
+            if( $(this).val() == 'Other_fish' ){
+                $('#fish_specific_input_div').show();
+            }
+
+        });
+
+    });
+</script>

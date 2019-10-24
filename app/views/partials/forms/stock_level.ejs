@@ -1,0 +1,876 @@
+<!-- product market page -->
+<section class="section stock_level_section product_market_section hide-on-large-only">
+    <!-- <div class="divider"></div> -->
+    <form method="POST" action="/inputStockLevel" id="stockLevelForm">
+        <div class="row center">
+            <!-- capturing the data -->
+            <div class="col s12">
+                <h4 class="center green-text text-darken-1">Stock Level Monitoring Data</h4>
+                <small class="center green-text text-darken-1">Please fill in the form</small>
+                <div class="submitAlert">
+                    <p>Success: Your data has been sent</p>
+                </div>
+                <div class="errorAlert">
+                    <p>Error: All fields requires input</p>
+                </div>
+                <div class="container">
+                    <ul class="collapsible">
+                        <!-- Market Location Information -->
+                        <li class="active">
+                            <div class="collapsible-header">A) Market Services Unit</div>
+                            <div class="collapsible-body">
+                                <!-- product category -->
+                                <div class="input-field">
+                                    <select name="msuCategory" id="msuProductCategory" required>
+                                        <option class="gray-text" required disabled selected>Choose Product Category
+                                        </option>
+                                        <option value="Ag_Inputs">Ag. Inputs</option>
+                                        <option value="Cereals">Cereals</option>
+                                        <option value="Fishes">Fishes</option>
+                                        <option value="Forestries">Forestries</option>
+                                        <option value="Fruits">Fruits</option>
+                                        <option value="Livestock">Livestock</option>
+                                        <option value="Others">Others</option>
+                                        <option value="Pulses">Pulses</option>
+                                        <option value="Stimulants">Stimulants</option>
+                                        <option value="Tubers">Tubers</option>
+                                        <option value="Vegetables">Vegetables</option>
+                                    </select>
+                                </div>
+                                <!-- end of product category -->
+
+                                <!-- Ag. Input's products -->
+                                <div class="input-field" id="ag_inputs_products_div">
+                                    <select class="ag_inputs_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose an Ag-Input product</option>
+                                        <option value="Seed_rice">Seed rice</option>
+                                        <option value="Paddy_rice">Paddy rice</option>
+                                        <option value="Seed_groundnut">Seed groundnut</option>
+                                        <option value="Seet_cow_pea">Seet cow pea</option>
+                                        <option value="Seed_vegetable">Seed vegetable</option>
+                                        <option value="Cassava_cuttings">Cassava cuttings</option>
+                                        <option value="Sweet_pototo_vines">Sweet pototo vines</option>
+                                        <option value="Water_yam set">Water yam set</option>
+                                        <option value="Maize_Seed">Maize Seed</option>
+                                        <option value="Palm_Oil_Seedlings">Palm Oil Seedlings</option>
+                                        <option value="Cacao_Seedlings">Cacao Seedlings</option>
+                                        <option value="Coffee_Seedlings">Coffee Seedlings</option>
+                                        <option value="Citrus_Seedlings">Citrus Seedlings</option>
+                                        <option value="Cashew_Seedlings">Cashew Seedlings</option>
+                                        <option value="Coconut_Seedlings">Coconut Seedlings</option>
+                                        <option value="Fertlizer_N:P:K ">Fertlizer, N:P:K 15:15:15</option>
+                                        <option value="Fertlizer_urea">Fertlizer, urea</option>
+                                        <option value="Herbicide">Herbicide</option>
+                                        <option value="Pesticide">Pesticide</option>
+                                        <option value="Fungicides">Fungicides</option>
+                                        <option value="Farm_labour">Farm labour</option>
+                                        <option value="Tractor">Tractor (land preparation)</option>
+                                    </select>
+                                </div>
+                                <!-- end of Ag. Input's products -->
+
+                                <!-- cereal list -->
+                                <div class="input-field" id="cereal_products_div">
+                                    <select class="cereal_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose a cereal product</option>
+                                        <option id="Rice_imported" value="Rice_imported_milled">Rice, imported, milled
+                                        </option>
+                                        <option id="Rice_local" value="Rice_local_milled_parboiled">Rice, local, milled, parboiled</option>
+                                        <option id="Rice_local_rough" value="Rice_local_rough">Rice, local, rough
+                                        </option>
+                                        <option id="Rice_paddy_husk" value="Rice_paddy_husk">Rice, paddy, husk</option>
+                                        <option id="Maize_grain_(dried)" value="Maize_grain_dried">Maize grain (dried)
+                                        </option>
+                                        <option id="Sorghum" value="Sorghum">Sorghum</option>
+                                        <option id="Millet_(finger)" value="Millet_finger">Millet (finger)</option>
+                                        <option id="Millet_(small)" value="Millet_small">Millet (small)</option>
+                                    </select>
+                                </div>
+                                <!-- end of cereal's products -->
+
+                                <!-- fishes list-->
+                                <div class="input-field" id="fish_products_div">
+                                    <select class="fish_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose a fish product</option>
+                                        <option value="Bonga_raw">Bonga (raw)</option>
+                                        <option value="Bonga_dried">Bonga (dried)</option>
+                                        <option value="Herring_raw">Herring (raw)</option>
+                                        <option value="Herring_dried">Herring (dried)</option>
+                                        <option value="Catfish_raw">Catfish (raw)</option>
+                                        <option value="Catfish_dried">Catfish (dried)</option>
+                                        <option value="Tilapia_raw">Tilapia (raw)</option>
+                                        <option value="Tilapia_dried">Tilapia (dried)</option>
+                                        <option value="Other_fish_raw">Other fish (raw)</option>
+                                        <option value="Other_fish_dried">Other fish (dried)</option>
+                                    </select>
+                                </div>
+                                <!-- end of fishes list -->
+
+                                <!-- forestry products -->
+                                <div class="input-field" id="forestry_products_div">
+                                    <select class="forestry_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose a forestry</option>
+                                        <option value="Charcoal">Charcoal</option>
+                                        <option value="Fuel_wood">Fuel wood</option>
+                                        <option value="Broom">Broom</option>
+                                        <option value="Timber_pole">Timber, pole</option>
+                                        <option value="Timber_1x12x14">Timber (1x12x14)</option>
+                                        <option value="Timber_2x2x14">Timber (2x2x14)</option>
+                                        <option value="Timber_2x6x14">Timber (2x6x14)</option>
+                                    </select>
+                                </div>
+                                <!-- end of forestry products -->
+
+                                <!-- fruit products -->
+                                <div class="input-field" id="fruit_products_div">
+                                    <select class="fruit_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose a fruit product</option>
+                                        <option value="Plantain">Plantain</option>
+                                        <option value="Banana">Banana</option>
+                                        <option value="Mango">Mango</option>
+                                        <option value="Pineapple">Pineapple</option>
+                                        <option value="Orange">Orange</option>
+                                        <option value="Grapefruit">Grapefruit</option>
+                                        <option value="Tangerine">Tangerine</option>
+                                        <option value="Lime">Lime</option>
+                                        <option value="Avocado">Avocado</option>
+                                        <option value="Pawpaw">Pawpaw</option>
+                                        <option value="Guava">Guava</option>
+                                    </select>
+                                </div>
+                                <!-- end of fruit products -->
+
+                                <!-- livestock products -->
+                                <div class="input-field" id="livestock_products_div">
+                                    <select class="livestock_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose a livestock product</option>
+                                        <option value="Eggs_chicken">Eggs, chicken</option>
+                                        <option value="Cow_milk">Cow milk</option>
+                                        <option value="Cow_meat">Cow meat</option>
+                                        <option value="Pig_meat_pork">Pig meat (pork)</option>
+                                        <option value="Chicken_live_adult">Chicken, live adult</option>
+                                        <option value="Goat_live_adult">Goat, live adult</option>
+                                        <option value="Sheep_live_adult">Sheep, live adult</option>
+                                        <option value="Pig live_adult">Pig, live adult</option>
+                                        <option value="Cattle_live_adult">Cattle, live adult</option>
+                                    </select>
+                                </div>
+                                <!-- end of livestock products -->
+
+                                <!-- other products -->
+                                <div class="input-field" id="other_products_div">
+                                    <select class="other_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose an other product</option>
+                                        <option value="Cashew_nuts">Cashew nuts</option>
+                                        <option value="Palm_oil">Palm oil</option>
+                                        <option value="Coconut_oil">Coconut oil</option>
+                                        <option value="Palm_kernalnut_oil">Palm kernal nut oil</option>
+                                    </select>
+                                </div>
+                                <!-- end of other products -->
+
+                                <!-- pulses products -->
+                                <div class="input-field" id="pulses_products_div">
+                                    <select class="pulses_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose pulses product</option>
+                                        <option value="Groundnut_unshelled">Groundnut (unshelled)</option>
+                                        <option value="Groundnut_shelled">Groundnut (shelled)</option>
+                                        <option value="Sesame">Sesame</option>
+                                        <option value="Cowpea">Cowpea</option>
+                                        <option value="Broad_beans">Broad beans</option>
+                                        <option value="Pigeon_peas">Pigeon peas</option>
+                                    </select>
+                                </div>
+                                <!-- end of pulses products -->
+
+                                <!-- stimulant products -->
+                                <div class="input-field" id="stimulant_products_div">
+                                    <select class="stimulant_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose a stimulant product</option>
+                                        <option value="Cocoa">Cocoa</option>
+                                        <option value="Coffee">Coffee</option>
+                                        <option value="Kola_nut">Kola nut</option>
+                                        <option value="Ginger">Ginger</option>
+                                    </select>
+                                </div>
+                                <!-- end of stimulant products -->
+
+                                <!-- tubers products -->
+                                <div class="input-field" id="tuber_products_div">
+                                    <select class="tuber_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose a tuber product</option>
+                                        <option value="Cassava_tubers">Cassava (tubers)</option>
+                                        <option value="Cassava_gari">Cassava (gari)</option>
+                                        <option value="Sweet_potato">Sweet potato</option>
+                                        <option value="Water_yam">Water yam</option>
+                                        <option value="Coco_yam">Coco yam</option>
+                                        <option value="Chinese_yam">Chinese yam</option>
+                                    </select>
+                                </div>
+                                <!-- end of tubers products -->
+
+                                <!-- vegetables products -->
+                                <div class="input-field" id="vegetable_products_div">
+                                    <select class="vegetable_products" name="msuProductName" id="msuProductName">
+                                        <option class="gray-text" required disabled selected>Choose a vegetable product</option>
+                                        <option value="Okra">Okra</option>
+                                        <option value="Garden_eggs">Garden eggs</option>
+                                        <option value="Tomatoes">Tomatoes</option>
+                                        <option value="Pepper_small_hot">Pepper, small (hot)</option>
+                                        <option value="Pepper_large_sweet">Pepper, large (sweet)</option>
+                                        <option value="Water_melon">Water melon</option>
+                                        <option value="Cucumber">Cucumber</option>
+                                        <option value="Pumpkin">Pumpkin</option>
+                                        <option value="Onions_bulb">Onions, bulb</option>
+                                        <option value="Potato_irish">Potato, irish</option>
+                                        <option value="Cabbage">Cabbage</option>
+                                        <option value="Lettuce">Lettuce</option>
+                                        <option value="Carrot">Carrot</option>
+                                    </select>
+                                </div>
+                                <!-- end of vegetables products -->
+                                <div class="input-field">
+                                    <label for="msuWholesale">Wholesale price</label>
+                                    <input type="number" name="msuWholesale" id="msuWholesale" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="msuRetail">Retail price</label>
+                                    <input type="number" name="msuRetail" id="msuRetail" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="msuFarmGate">Farm Gate price</label>
+                                    <input type="text" name="msuFarmGate" id="msuFarmGate" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="msuTransportCost">Transportation cost</label>
+                                    <input type="text" name="msuTransportCost" id="msuTransportCost" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="msuAgricInPrice">Agricultural input
+                                        prices
+                                    </label>
+                                    <input type="text" name="msuAgricInPrice" id="msuAgricInPrice" required>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- B)	TYPE OF TRADERS BY MARKET-->
+                        <li>
+                            <div class="collapsible-header">B) Types of Traders by Market</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <label for="ttmMarket">Market</label>
+                                    <input type="text" name="ttmMarket" id="ttmMarket" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="ttmWholesaler">Wholesalers > 5 Tonnes (Greater than 100 bags
+                                        of 50kg)</label>
+                                    <input type="number" name="ttmWholesaler" id="ttmWholesaler">
+                                </div>
+                                <div class="input-field">
+                                    <label for="ttmSemi">Semi-Wholesaler 2 to 5 Tonnes (between 40 to 100 bags of
+                                        50kg)</label>
+                                    <input type="number" name="ttmSemi" id="ttmSemi">
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="ttmRetailers">Retailers < 2 Tonnes (Less than 40 bags of 50 kg)</label>
+                                    <input type="number" name="ttmRetailers" id="ttmRetailers" required>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- C)	TRADERS STOCK PER COMMODITY -->
+                        <li>
+                            <div class="collapsible-header">C) Traders Stock Per Commodity</div>
+                            <div class="collapsible-body">
+                                <!-- product category -->
+                                <div class="input-field">
+                                    <select name="tscCategory" id="tscProductCategory" required>
+                                        <option class="gray-text" required disabled selected>Choose Product Category</option>
+                                        <option value="Ag_Inputs">Ag. Inputs</option>
+                                        <option value="Cereals">Cereals</option>
+                                        <option value="Fishes">Fishes</option>
+                                        <option value="Forestries">Forestries</option>
+                                        <option value="Fruits">Fruits</option>
+                                        <option value="Livestock">Livestock</option>
+                                        <option value="Others">Others</option>
+                                        <option value="Pulses">Pulses</option>
+                                        <option value="Stimulants">Stimulants</option>
+                                        <option value="Tubers">Tubers</option>
+                                        <option value="Vegetables">Vegetables</option>
+                                    </select>
+                                </div>
+                                <!-- end of product category -->
+
+                                <!-- Ag. Input's products -->
+                                <div class="input-field" id="tsc_ag_inputs_products_div">
+                                    <select class="ag_inputs_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose an Ag-Input</option>
+                                        <option value="Seed_rice">Seed rice</option>
+                                        <option value="Paddy rice">Paddy rice</option>
+                                        <option value="Seed groundnut">Seed groundnut</option>
+                                        <option value="Seet cow pea">Seet cow pea</option>
+                                        <option value="Seed vegetable">Seed vegetable</option>
+                                        <option value="Cassava cuttings">Cassava cuttings</option>
+                                        <option value="Sweet pototo_vines">Sweet pototo vines</option>
+                                        <option value="Water yam set">Water yam set</option>
+                                        <option value="Maize Seed">Maize Seed</option>
+                                        <option value="Palm Oil Seedlings">Palm Oil Seedlings</option>
+                                        <option value="Cacao Seedlings">Cacao Seedlings</option>
+                                        <option value="Coffee Seedlings">Coffee Seedlings</option>
+                                        <option value="Citrus Seedlings">Citrus Seedlings</option>
+                                        <option value="Cashew Seedlings">Cashew Seedlings</option>
+                                        <option value="Coconut Seedlings">Coconut Seedlings</option>
+                                        <option value="Fertlizer N:P:K ">Fertlizer, N:P:K 15:15:15</option>
+                                        <option value="Fertlizer urea">Fertlizer, urea</option>
+                                        <option value="Herbicide">Herbicide</option>
+                                        <option value="Pesticide">Pesticide</option>
+                                        <option value="Fungicides">Fungicides</option>
+                                        <option value="Farm labour">Farm labour</option>
+                                        <option value="Tractor">Tractor (land preparation)</option>
+                                    </select>
+                                </div>
+                                <!-- end of Ag. Input's products -->
+
+                                <!-- cereal list -->
+                                <div class="input-field" id="tsc_cereal_products_div">
+                                    <select class="cereal_products" name="tscProductName" id="tscProductName">
+                                        < <option class="gray-text" required disabled selected>Choose a cereal
+                                            product</option>
+                                            <option id="Rice_imported" value="Rice imported milled">Rice, imported,
+                                                milled
+                                            </option>
+                                            <option id="Rice_local" value="Rice local milled parboiled">Rice, local,
+                                                milled,
+                                                parboiled</option>
+                                            <option id="Rice_local_rough" value="Rice local rough">Rice, local, rough
+                                            </option>
+                                            <option id="Rice_paddy_husk" value="Rice paddy husk">Rice, paddy, husk
+                                            </option>
+                                            <option id="Maize_grain_(dried)" value="Maize grain dried">Maize grain
+                                                (dried)
+                                            </option>
+                                            <option id="Sorghum" value="Sorghum">Sorghum</option>
+                                            <option id="Millet_(finger)" value="Millet finger">Millet (finger)</option>
+                                            <option id="Millet_(small)" value="Millet small">Millet (small)</option>
+                                    </select>
+                                </div>
+                                <!-- end of cereal's products -->
+
+                                <!-- fishes list-->
+                                <div class="input-field" id="tsc_fish_products_div">
+                                    <select class="fish_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose a fish
+                                            product</option>
+                                        <option value="Bonga raw">Bonga (raw)</option>
+                                        <option value="Bonga dried">Bonga (dried)</option>
+                                        <option value="Herring raw">Herring (raw)</option>
+                                        <option value="Herring dried">Herring (dried)</option>
+                                        <option value="Catfish raw">Catfish (raw)</option>
+                                        <option value="Catfish dried">Catfish (dried)</option>
+                                        <option value="Tilapia raw">Tilapia (raw)</option>
+                                        <option value="Tilapia dried">Tilapia (dried)</option>
+                                        <option value="Other fish raw">Other fish (raw)</option>
+                                        <option value="Other fish dried">Other fish (dried)</option>
+                                    </select>
+                                </div>
+                                <!-- end of fishes list -->
+
+                                <!-- forestry products -->
+                                <div class="input-field" id="tsc_forestry_products_div">
+                                    <select class="forestry_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose a forestry
+                                            product</option>
+                                        <option value="Charcoal">Charcoal</option>
+                                        <option value="Fuel wood">Fuel wood</option>
+                                        <option value="Broom">Broom</option>
+                                        <option value="Timber pole">Timber, pole</option>
+                                        <option value="Timber 1x12x14">Timber (1x12x14)</option>
+                                        <option value="Timber 2x2x14">Timber (2x2x14)</option>
+                                        <option value="Timber 2x6x14">Timber (2x6x14)</option>
+                                    </select>
+                                </div>
+                                <!-- end of forestry products -->
+
+                                <!-- fruit products -->
+                                <div class="input-field" id="tsc_fruit_products_div">
+                                    <select class="fruit_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose a fruit
+                                            product</option>
+                                        <option value="Plantain">Plantain</option>
+                                        <option value="Banana">Banana</option>
+                                        <option value="Mango">Mango</option>
+                                        <option value="Pineapple">Pineapple</option>
+                                        <option value="Orange">Orange</option>
+                                        <option value="Grapefruit">Grapefruit</option>
+                                        <option value="Tangerine">Tangerine</option>
+                                        <option value="Lime">Lime</option>
+                                        <option value="Avocado">Avocado</option>
+                                        <option value="Pawpaw">Pawpaw</option>
+                                        <option value="Guava">Guava</option>
+                                    </select>
+                                </div>
+                                <!-- end of fruit products -->
+
+                                <!-- livestock products -->
+                                <div class="input-field" id="tsc_livestock_products_div">
+                                    <select class="livestock_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose a livestock
+                                            product</option>
+                                        <option value="Eggs chicken">Eggs, chicken</option>
+                                        <option value="Cow milk">Cow milk</option>
+                                        <option value="Cow meat">Cow meat</option>
+                                        <option value="Pig meat pork">Pig meat (pork)</option>
+                                        <option value="Chicken live adult">Chicken, live adult</option>
+                                        <option value="Goat live adult">Goat, live adult</option>
+                                        <option value="Sheep live adult">Sheep, live adult</option>
+                                        <option value="Pig live adult">Pig, live adult</option>
+                                        <option value="Cattle live adult">Cattle, live adult</option>
+                                    </select>
+                                </div>
+                                <!-- end of livestock products -->
+
+                                <!-- other products -->
+                                <div class="input-field" id="tsc_other_products_div">
+                                    <select class="other_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose an other
+                                            product</option>
+                                        <option value="Cashew nuts">Cashew nuts</option>
+                                        <option value="Palm oil">Palm oil</option>
+                                        <option value="Coconut oil">Coconut oil</option>
+                                        <option value="Palm kernalnut oil">Palm kernal nut oil</option>
+                                    </select>
+                                </div>
+                                <!-- end of other products -->
+
+                                <!-- pulses products -->
+                                <div class="input-field" id="tsc_pulses_products_div">
+                                    <select class="pulses_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose pulses
+                                            product</option>
+                                        <option value="Groundnut unshelled">Groundnut (unshelled)</option>
+                                        <option value="Groundnut shelled">Groundnut (shelled)</option>
+                                        <option value="Sesame">Sesame</option>
+                                        <option value="Cowpea">Cowpea</option>
+                                        <option value="Broad beans">Broad beans</option>
+                                        <option value="Pigeon peas">Pigeon peas</option>
+                                    </select>
+                                </div>
+                                <!-- end of pulses products -->
+
+                                <!-- stimulant products -->
+                                <div class="input-field" id="tsc_stimulant_products_div">
+                                    <select class="stimulant_products" name="tscProductName" id="tscProductName">
+                                        <select class="stimulant_products" name="msuProductName" id="msuProductName">
+                                            <option class="gray-text" required disabled selected>Choose a
+                                                stimulant
+                                                product</option>
+                                            <option value="Cocoa">Cocoa</option>
+                                            <option value="Coffee">Coffee</option>
+                                            <option value="Kola nut">Kola nut</option>
+                                            <option value="Ginger">Ginger</option>
+                                        </select>
+                                </div>
+                                <!-- end of stimulant products -->
+
+                                <!-- tubers products -->
+                                <div class="input-field" id="tsc_tuber_products_div">
+                                    <select class="tuber_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose a tuber
+                                            product</option>
+                                        <option value="Cassava tubers">Cassava (tubers)</option>
+                                        <option value="Cassava gari">Cassava (gari)</option>
+                                        <option value="Sweet potato">Sweet potato</option>
+                                        <option value="Water yam">Water yam</option>
+                                        <option value="Coco yam">Coco yam</option>
+                                        <option value="Chinese yam">Chinese yam</option>
+                                    </select>
+                                </div>
+                                <!-- end of tubers products -->
+                                <!-- vegetables products -->
+                                <div class="input-field" id="tsc_vegetable_products_div">
+                                    <select class="vegetable_products" name="tscProductName" id="tscProductName">
+                                        <option class="gray-text" required disabled selected>Choose a vegetable
+                                            product</option>
+                                        <option value="Okra">Okra</option>
+                                        <option value="Garden eggs">Garden eggs</option>
+                                        <option value="Tomatoes">Tomatoes</option>
+                                        <option value="Pepper small hot">Pepper, small (hot)</option>
+                                        <option value="Pepper large sweet">Pepper, large (sweet)</option>
+                                        <option value="Water melon">Water melon</option>
+                                        <option value="Cucumber">Cucumber</option>
+                                        <option value="Pumpkin">Pumpkin</option>
+                                        <option value="Onions bulb">Onions, bulb</option>
+                                        <option value="Potato irish">Potato, irish</option>
+                                        <option value="Cabbage">Cabbage</option>
+                                        <option value="Lettuce">Lettuce</option>
+                                        <option value="Carrot">Carrot</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <label for="tscQuantityStore">Quantity in Store</label>
+                                    <input type="number" name="tscQuantityStore" id="tscQuantityStore" required>
+                                </div>
+                                <!-- end of vegetables products -->
+                                <div class="input-field">
+                                    <label for="tscQuantitySold">Quantity Sold</label>
+                                    <input type="number" name="tscQuantitySold" id="tscQuantitySold" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="tscStockLevel">Stock Level</label>
+                                    <input type="number" name="tscStockLevel" id="tscStockLevel" required>
+                                </div>
+                            </div>
+                        </li>
+                        </li>
+                        <!--D) SOURCES OF SUPPLY AND DESTINATIONS-->
+                        <li>
+                            <div class="collapsible-header">D) Source of Supply and Destination</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <label for="scMarket">Market</label>
+                                    <input type="text" name="ssdMarket" id="ssdMarket" required>
+                                </div>
+                                <!-- product category -->
+                                <div class="input-field">
+                                    <select name="ssdCategory" id="ssdProductCategory" required>
+                                        <option class="gray-text" required disabled selected>Choose Product
+                                            Category</option>
+                                        <option value="Ag_Inputs">Ag. Inputs</option>
+                                        <option value="Cereals">Cereals</option>
+                                        <option value="Fishes">Fishes</option>
+                                        <option value="Forestries">Forestries</option>
+                                        <option value="Fruits">Fruits</option>
+                                        <option value="Livestock">Livestock</option>
+                                        <option value="Others">Others</option>
+                                        <option value="Pulses">Pulses</option>
+                                        <option value="Stimulants">Stimulants</option>
+                                        <option value="Tubers">Tubers</option>
+                                        <option value="Vegetables">Vegetables</option>
+                                    </select>
+                                </div>
+                                <!-- end of product category -->
+
+                                <!-- Ag. Input's products -->
+                                <div class="input-field" id="ssd_ag_inputs_products_div">
+                                    <select class="ag_inputs_products" name="ssdProductName" id="ssdProductName">
+                                        option class="gray-text" required disabled selected>Choose an Ag-Input
+                                        product</option>
+                                        <option value="Seed rice">Seed rice</option>
+                                        <option value="Paddy rice">Paddy rice</option>
+                                        <option value="Seed groundnut">Seed groundnut</option>
+                                        <option value="Seet cow pea">Seet cow pea</option>
+                                        <option value="Seed vegetable">Seed vegetable</option>
+                                        <option value="Cassava cuttings">Cassava cuttings</option>
+                                        <option value="Sweet pototo_vines">Sweet pototo vines</option>
+                                        <option value="Water yam set">Water yam set</option>
+                                        <option value="Maize Seed">Maize Seed</option>
+                                        <option value="Palm Oil Seedlings">Palm Oil Seedlings</option>
+                                        <option value="Cacao Seedlings">Cacao Seedlings</option>
+                                        <option value="Coffee Seedlings">Coffee Seedlings</option>
+                                        <option value="Citrus Seedlings">Citrus Seedlings</option>
+                                        <option value="Cashew Seedlings">Cashew Seedlings</option>
+                                        <option value="Coconut Seedlings">Coconut Seedlings</option>
+                                        <option value="Fertlizer N:P:K ">Fertlizer, N:P:K 15:15:15</option>
+                                        <option value="Fertlizer urea">Fertlizer, urea</option>
+                                        <option value="Herbicide">Herbicide</option>
+                                        <option value="Pesticide">Pesticide</option>
+                                        <option value="Fungicides">Fungicides</option>
+                                        <option value="Farm labour">Farm labour</option>
+                                        <option value="Tractor">Tractor (land preparation)</option>
+                                    </select>
+                                </div>
+                                <!-- end of Ag. Input's products -->
+
+                                <!-- cereal list -->
+                                <div class="input-field" id="ssd_cereal_products_div">
+                                    <select class="cereal_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose a cereal
+                                            product</option>
+                                        <option id="Rice_imported" value="Rice_imported_milled">Rice, imported, milled
+                                        </option>
+                                        <option id="Rice_local" value="Rice_local_milled_parboiled">Rice, local, milled,
+                                            parboiled</option>
+                                        <option id="Rice_local_rough" value="Rice_local_rough">Rice, local, rough
+                                        </option>
+                                        <option id="Rice_paddy_husk" value="Rice_paddy_husk">Rice, paddy, husk</option>
+                                        <option id="Maize_grain_(dried)" value="Maize_grain_dried">Maize grain (dried)
+                                        </option>
+                                        <option id="Sorghum" value="Sorghum">Sorghum</option>
+                                        <option id="Millet_(finger)" value="Millet_finger">Millet (finger)</option>
+                                        <option id="Millet_(small)" value="Millet_small">Millet (small)</option>
+                                    </select>
+                                </div>
+                                <!-- end of cereal's products -->
+
+                                <!-- fishes list-->
+                                <div class="input-field" id="ssd_fish_products_div">
+                                    <select class="fish_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose a fish
+                                            product</option>
+                                        <option value="Bonga raw">Bonga (raw)</option>
+                                        <option value="Bonga dried">Bonga (dried)</option>
+                                        <option value="Herring raw">Herring (raw)</option>
+                                        <option value="Herring dried">Herring (dried)</option>
+                                        <option value="Catfish raw">Catfish (raw)</option>
+                                        <option value="Catfish dried">Catfish (dried)</option>
+                                        <option value="Tilapia raw">Tilapia (raw)</option>
+                                        <option value="Tilapia dried">Tilapia (dried)</option>
+                                        <option value="Other fish raw">Other fish (raw)</option>
+                                        <option value="Other fish dried">Other fish (dried)</option>
+                                    </select>
+                                </div>
+                                <!-- end of fishes list -->
+
+                                <!-- forestry products -->
+                                <div class="input-field" id="ssd_forestry_products_div">
+                                    <select class="forestry_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose a forestry
+                                            product</option>
+                                        <option value="Charcoal">Charcoal</option>
+                                        <option value="Fuel wood">Fuel wood</option>
+                                        <option value="Broom">Broom</option>
+                                        <option value="Timber pole">Timber, pole</option>
+                                        <option value="Timber 1x12x14">Timber (1x12x14)</option>
+                                        <option value="Timber 2x2x14">Timber (2x2x14)</option>
+                                        <option value="Timber 2x6x14">Timber (2x6x14)</option>
+                                    </select>
+                                </div>
+                                <!-- end of forestry products -->
+
+                                <!-- fruit products -->
+                                <div class="input-field" id="ssd_fruit_products_div">
+                                    <select class="fruit_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose a fruit
+                                            product</option>
+                                        <option value="Plantain">Plantain</option>
+                                        <option value="Banana">Banana</option>
+                                        <option value="Mango">Mango</option>
+                                        <option value="Pineapple">Pineapple</option>
+                                        <option value="Orange">Orange</option>
+                                        <option value="Grapefruit">Grapefruit</option>
+                                        <option value="Tangerine">Tangerine</option>
+                                        <option value="Lime">Lime</option>
+                                        <option value="Avocado">Avocado</option>
+                                        <option value="Pawpaw">Pawpaw</option>
+                                        <option value="Guava">Guava</option>
+                                    </select>
+                                </div>
+                                <!-- end of fruit products -->
+
+                                <!-- livestock products -->
+                                <div class="input-field" id="ssd_livestock_products_div">
+                                    <select class="livestock_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose a livestock
+                                            product</option>
+                                        <option value="Eggs chicken">Eggs, chicken</option>
+                                        <option value="Cow milk">Cow milk</option>
+                                        <option value="Cow meat">Cow meat</option>
+                                        <option value="Pig meat pork">Pig meat (pork)</option>
+                                        <option value="Chicken live adult">Chicken, live adult</option>
+                                        <option value="Goat live adult">Goat, live adult</option>
+                                        <option value="Sheep live adult">Sheep, live adult</option>
+                                        <option value="Pig live adult">Pig, live adult</option>
+                                        <option value="Cattle live adult">Cattle, live adult</option>
+                                    </select>
+                                </div>
+                                <!-- end of livestock products -->
+
+                                <!-- other products -->
+                                <div class="input-field" id="ssd_other_products_div">
+                                    <select class="other_products" name="mktProductName" id="mktProductName">
+                                        <option class="gray-text" required disabled selected>Choose an other
+                                        </option>
+                                        <option value="Cashew nuts">Cashew nuts</option>
+                                        <option value="Palm oil">Palm oil</option>
+                                        <option value="Coconut oil">Coconut oil</option>
+                                        <option value="Palm kernalnut oil">Palm kernal nut oil</option>
+                                    </select>
+                                </div>
+                                <!-- end of other products -->
+
+                                <!-- pulses products -->
+                                <div class="input-field" id="ssd_pulses_products_div">
+                                    <select class="pulses_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose pulses
+                                        </option>
+                                        <option value="Groundnut unshelled">Groundnut (unshelled)</option>
+                                        <option value="Groundnut shelled">Groundnut (shelled)</option>
+                                        <option value="Sesame">Sesame</option>
+                                        <option value="Cowpea">Cowpea</option>
+                                        <option value="Broad beans">Broad beans</option>
+                                        <option value="Pigeon peas">Pigeon peas</option>
+                                    </select>
+                                </div>
+                                <!-- end of pulses products -->
+
+                                <!-- stimulant products -->
+                                <div class="input-field" id="ssd_stimulant_products_div">
+                                    <select class="stimulant_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose a stimulant
+                                            product</option>
+                                        <option value="Cocoa">Cocoa</option>
+                                        <option value="Coffee">Coffee</option>
+                                        <option value="Kolanut">Kola nut</option>
+                                        <option value="Ginger">Ginger</option>
+                                    </select>
+                                </div>
+                                <!-- end of stimulant products -->
+
+                                <!-- tubers products -->
+                                <div class="input-field" id="ssd_tuber_products_div">
+                                    <select class="tuber_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose a tuber
+                                        </option>
+                                        <option value="Cassava tubers">Cassava (tubers)</option>
+                                        <option value="Cassava gari">Cassava (gari)</option>
+                                        <option value="Sweet potato">Sweet potato</option>
+                                        <option value="Water yam">Water yam</option>
+                                        <option value="Coco yam">Coco yam</option>
+                                        <option value="Chinese yam">Chinese yam</option>
+                                    </select>
+                                </div>
+                                <!-- end of tubers products -->
+
+                                <!-- vegetables products -->
+                                <div class="input-field" id="ssd_vegetable_products_div">
+                                    <select class="vegetable_products" name="ssdProductName" id="ssdProductName">
+                                        <option class="gray-text" required disabled selected>Choose a vegetable
+                                        </option>
+                                        <option value="Okra">Okra</option>
+                                        <option value="Garden eggs">Garden eggs</option>
+                                        <option value="Tomatoes">Tomatoes</option>
+                                        <option value="Pepper small hot">Pepper, small (hot)</option>
+                                        <option value="Pepper large sweet">Pepper, large (sweet)</option>
+                                        <option value="Water melon">Water melon</option>
+                                        <option value="Cucumber">Cucumber</option>
+                                        <option value="Pumpkin">Pumpkin</option>
+                                        <option value="Onions bulb">Onions, bulb</option>
+                                        <option value="Potato irish">Potato, irish</option>
+                                        <option value="Cabbage">Cabbage</option>
+                                        <option value="Lettuce">Lettuce</option>
+                                        <option value="Carrot">Carrot</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label for="ssdSupply">Supply</label>
+                                    <input type="number" name="ssdSupply" id="ssdSupply" required>
+                                </div>
+                                <div class="input-field">
+                                    <select name="ssdDestination" id="ssdDestination" required class="validate">
+                                        <option class="gray-text" required disabled selected>Choose a
+                                            Destination</option>
+                                        <option id="DIST_WAU" value="Western Area Urban">Western Area Urban</option>
+                                        <option id="DIST_WAR" value="Western Area Rural">Western Area Rural</option>
+                                        <option id="DIST_FAL" value="Falaba">Falaba</option>
+                                        <option id="DIST_KOI" value="Koinadugu">Koinadugu</option>
+                                        <option id="DIST_BOM" value="Bombali">Bombali</option>
+                                        <option id="DIST_TON" value="Tonkolili">Tonkolili</option>
+                                        <option id="DIST_KAM" value="Kambia">Kambia</option>
+                                        <option id="DIST_KAR" value="Karene">Karene</option>
+                                        <option id="DIST_POR" value="Porto Loko">Porto Loko</option>
+                                        <option id="DIST_BO" value="Bo">Bo</option>
+                                        <option id="DIST_BON" value="Bonthe">Bonthe</option>
+                                        <option id="DIST_PUJ" value="Pujehun">Pujehun</option>
+                                        <option id="DIST_MOY" value="Moyamba">Moyamba</option>
+                                        <option id="DIST_KEN" value="Kenema">Kenema</option>
+                                        <option id="DIST_KAL" value="Kaliahun">Kaliahun</option>
+                                        <option id="DIST_KON" value="Kono">Kono</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+                        <!--E) Storage Capacity (Tonnes)-->
+                        <!-- <li>
+                            <div class="collapsible-header">E) Storage Capacity (Tonnes)</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <label for="scMarket">Market</label>
+                                    <input type="text" name="scMarket" id="scMarket" required>
+                                </div>
+                                <div class="input-field" id="sc_products_div">
+                                    <select id="scProducts" name="sProducts">
+                                        <option class="gray-text" required disabled selected>Choose a product
+                                        </option>
+                                        <option value="Cassava">Cassava</option>
+                                        <option value="Cowpea">Cowpea</option>
+                                        <option value="Groundnut">Groundnut</option>
+                                        <option value="Maize">Maize</option>
+                                        <option value="Millet">Millet</option>
+                                        <option value="Rice">Rice</option>
+                                        <option value="Sorghum">Sorghum</option>
+                                        <option value="Soya_Bean">Soya Bean</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label for="scGrandTotal">Grand Total</label>
+                                    <input type="number" name="scGrandTotal" id="scGrandTotal">
+                                </div>
+                            </div>
+                        </li> -->
+                        <!--F) Average Storage Cost-->
+                        <!-- <li>
+                            <div class="collapsible-header">F) Average Storage Cost</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <label for="ascRent">Rent</label>
+                                    <input type="number" name="ascRent" id="ascRent" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="ascElectricity">Electricity</label>
+                                    <input type="number" name="ascElectricity" id="ascElectricity">
+                                </div>
+                                <div class="input-field">
+                                    <label for="ascSecurity">Security(Own)</label>
+                                    <input type="number" name="ascSecurity" id="ascSecurity">
+                                </div>
+                                <div class="input-field">
+                                    <label for="ascSecurityMarket">Security(Maket owned)</label>
+                                    <input type="number" name="ascSecurityMarket" id="ascSecurityMarket" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="ascfumigation">Fumigation</label>
+                                    <input type="number" name="ascfumigation" id="ascfumigation" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="ascChemical">Chemical Treatment</label>
+                                    <input type="number" name="ascChemical" id="ascChemical" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="ascAVerage">Average Cost</label>
+                                    <input type="number" name="ascAVerage" id="ascAVerage" required>
+                                </div>
+                            </div>
+                        </li> -->
+                        <!--G) Livestock Prices-->
+                        <!-- <li>
+                            <div class="collapsible-header">G) Livestock Prices</div>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <select class="livestock_products" name="livestock" id="livestock">
+                                        <option class="gray-text" required disabled selected>Choose a livestock
+                                        </option>
+                                        <option value="Eggs chicken">Eggs, chicken</option>
+                                        <option value="Cow milk">Cow milk</option>
+                                        <option value="Cow meat">Cow meat</option>
+                                        <option value="Pig meat pork">Pig meat (pork)</option>
+                                        <option value="Chicken live adult">Chicken, live adult</option>
+                                        <option value="Goat live adult">Goat, live adult</option>
+                                        <option value="Sheep live adult">Sheep, live adult</option>
+                                        <option value="Pig live adult">Pig, live adult</option>
+                                        <option value="Cattle live adult">Cattle, live adult</option>
+                                    </select>
+                                </div>
+                                <div class="input-field">
+                                    <label for="lpWholesale">Wholesale price(Head)</label>
+                                    <input type="number" name="lpWholesale" id="lpWholesale">
+                                </div>
+                            </div>
+                        </li> -->
+                    </ul>
+                    <input class="btn btn-small btn-extend blue lighten-2 white-text" id="btn-new-stockData" type="submit" value="send">
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
