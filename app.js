@@ -51,7 +51,7 @@ app.set('port', process.env.PORT || 4000);
 app.set('view engine', 'ejs');
 app.set('views', './app/views'); //specifying the view folder location
 
-app.locals.siteTitle = 'AMIS';
+app.locals.siteTitle = 'AMIS MOBILE';
 
 //accessing the static files
 app.use(express.static('./app/public'));
