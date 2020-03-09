@@ -3,6 +3,7 @@ var exportFlowModel = require('../models/exportFlowModel');
 var tradeFlowModel = require('../models/tradeFlowModel');
 var marketDataModel = require('../models/marketDataModel');
 
+// export
 module.exports = {
     // login page get controller
     index: (req, res) => {
@@ -54,6 +55,8 @@ module.exports = {
             FG_Weight,
             FG_Price,
         } = req.body;
+
+        console.log(mktDistrict);
 
         var newMarketDataFlow = new marketDataModel({
             mktLocality: mktLocality,

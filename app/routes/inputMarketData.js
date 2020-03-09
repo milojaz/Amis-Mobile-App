@@ -27,13 +27,14 @@ router.get('/inputMarketData', ensureAuthentication, (req, res) => {
 router.post('/inputMarketData', ensureAuthentication, (req, res) => {
 
     // pusher trigger
-    pusher.trigger('market-price', 'whs-price', {
-        points: 5,
-        district: req.body.mktDistrict,
-        price: 100
+    // pusher.trigger('market-price', 'whs-price', {
+    //     points: 5,
+    //     district: req.body.mktDistrict,
+    //     price: 100
 
-    });
+    // });
 
+    console.log(req.body.mktDistrict)
     console.log('data sent');
 
 });

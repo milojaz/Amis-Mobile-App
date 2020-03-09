@@ -40,11 +40,11 @@
         // })
 
         // hide all district by default
-        $('#East_Districts_Div').hide();
-        $('#West_Districts_Div').hide();
-        $('#North_East_Districts_Div').hide();
-        $('#North_West_Districts_Div').hide();
-        $('#South_Districts_Div').hide();
+        $('.East_Districts_Div').hide();
+        $('.West_Districts_Div').hide();
+        $('.North_East_Districts_Div').hide();
+        $('.North_West_Districts_Div').hide();
+        $('.South_Districts_Div').hide();
 
         // hide all east district markets by defaults
         function east() {
@@ -188,35 +188,35 @@
         // check the selected region and display it districts
         $('#mktRegion').on('change', function() {
             if ($(this).val() == 'WEST') {
-                $('#East_Districts_Div').hide();
-                $('#North_East_Districts_Div').hide();
-                $('#North_West_Districts_Div').hide();
-                $('#South_Districts_Div').hide();
-                $('#West_Districts_Div').show();
+                $('.East_Districts_Div').hide();
+                $('.North_East_Districts_Div').hide();
+                $('.North_West_Districts_Div').hide();
+                $('.South_Districts_Div').hide();
+                $('.West_Districts_Div').show();
             } else if ($(this).val() == 'EAST') {
-                $('#West_Districts_Div').hide();
-                $('#North_East_Districts_Div').hide();
-                $('#North_West_Districts_Div').hide();
-                $('#South_Districts_Div').hide();
-                $('#East_Districts_Div').show();
+                $('.West_Districts_Div').hide();
+                $('.North_East_Districts_Div').hide();
+                $('.North_West_Districts_Div').hide();
+                $('.South_Districts_Div').hide();
+                $('.East_Districts_Div').show();
             } else if ($(this).val() == 'NORTH_EAST') {
-                $('#West_Districts_Div').hide();
-                $('#East_Districts_Div').hide();
-                $('#North_West_Districts_Div').hide();
-                $('#South_Districts_Div').hide();
-                $('#North_East_Districts_Div').show();
+                $('.West_Districts_Div').hide();
+                $('.East_Districts_Div').hide();
+                $('.North_West_Districts_Div').hide();
+                $('.South_Districts_Div').hide();
+                $('.North_East_Districts_Div').show();
             } else if ($(this).val() == 'NORTH_WEST') {
-                $('#West_Districts_Div').hide();
-                $('#East_Districts_Div').hide();
-                $('#North_East_Districts_Div').hide();
-                $('#South_Districts_Div').hide();
-                $('#North_West_Districts_Div').show();
+                $('.West_Districts_Div').hide();
+                $('.East_Districts_Div').hide();
+                $('.North_East_Districts_Div').hide();
+                $('.South_Districts_Div').hide();
+                $('.North_West_Districts_Div').show();
             } else if ($(this).val() == 'SOUTH') {
-                $('#West_Districts_Div').hide();
-                $('#East_Districts_Div').hide();
-                $('#North_East_Districts_Div').hide();
-                $('#North_West_Districts_Div').hide();
-                $('#South_Districts_Div').show();
+                $('.West_Districts_Div').hide();
+                $('.East_Districts_Div').hide();
+                $('.North_East_Districts_Div').hide();
+                $('.North_West_Districts_Div').hide();
+                $('.South_Districts_Div').show();
             }
         });
 

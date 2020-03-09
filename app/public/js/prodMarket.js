@@ -25,9 +25,9 @@ function submitMarketForm(e) {
 
     // getting the values
     var prodMktLocality = getInputValue('mktLocality');
-    var prodMktChiefdom = getInputValue('mktChiefdom');
+    // var prodMktChiefdom = getInputValue('mktChiefdom');
     var prodMktDistrict = getInputValue('mktDistrict');
-    var prodMktRegion = getInputValue('mktRegion');
+    // var prodMktRegion = getInputValue('mktRegion');
     var marketPlace = getInputValue('marketPlace');
     var marketType = getInputValue('marketType');
     var prodMktEnumerator = getInputValue('mktEnumerator');
@@ -44,31 +44,35 @@ function submitMarketForm(e) {
     var prodMktFG_Weight = getInputValue('FG_Weight');
     var prodMktFG_Price = parseInt(getInputValue('FG_Price'));
 
+    console.log(`locality: ${prodMktLocality}`)
+    // console.log(`chiefdom: ${prodMktChiefdom}`)
     console.log(`district: ${prodMktDistrict}`)
-    console.log(`produdct: ${prodName}`)
     console.log(`market name: ${marketPlace}`)
+    console.log(`market type: ${marketType}`)
+    console.log(`produdct: ${prodName}`)
+    
 
     // verify 
-    connectedRef.on("value", function(snap) {
-        if (snap.val() === true) {
+    // connectedRef.on("value", function(snap) {
+    //     if (snap.val() === true) {
 
-            console.log("connected");
-            //calling the send and save data
-            saveMarketData(prodMktLocality, prodMktChiefdom, prodMktDistrict, prodMktRegion, marketPlace, marketType, prodMktEnumerator, 
-                prodMktDate, mktProductCategory, prodName, prodMktWHS_Unit, prodMktWHS_Weight, prodMktWHS_Price,
-                prodMktRET_Unit, prodMktRET_Weight, prodMktRET_Price, prodMktFG_Unit, prodMktFG_Weight, prodMktFG_Price);
+    //         console.log("connected");
+    //         //calling the send and save data
+    //         saveMarketData(prodMktLocality, prodMktChiefdom, prodMktDistrict, prodMktRegion, marketPlace, marketType, prodMktEnumerator, 
+    //             prodMktDate, mktProductCategory, prodName, prodMktWHS_Unit, prodMktWHS_Weight, prodMktWHS_Price,
+    //             prodMktRET_Unit, prodMktRET_Weight, prodMktRET_Price, prodMktFG_Unit, prodMktFG_Weight, prodMktFG_Price);
 
-            offlineData.length = 0; // reseting the array
-        } else {
-            console.log("not connected");
+    //         offlineData.length = 0; // reseting the array
+    //     } else {
+    //         console.log("not connected");
 
-            offlineData += saveMarketData(prodMktLocality, prodMktChiefdom, prodMktDistrict, prodMktRegion, marketPlace, marketType, prodMktEnumerator, 
-                prodMktDate, mktProductCategory, prodName, prodMktWHS_Unit, prodMktWHS_Weight, prodMktWHS_Price,
-                prodMktRET_Unit, prodMktRET_Weight, prodMktRET_Price, prodMktFG_Unit, prodMktFG_Weight, prodMktFG_Price);
+    //         offlineData += saveMarketData(prodMktLocality, prodMktChiefdom, prodMktDistrict, prodMktRegion, marketPlace, marketType, prodMktEnumerator, 
+    //             prodMktDate, mktProductCategory, prodName, prodMktWHS_Unit, prodMktWHS_Weight, prodMktWHS_Price,
+    //             prodMktRET_Unit, prodMktRET_Weight, prodMktRET_Price, prodMktFG_Unit, prodMktFG_Weight, prodMktFG_Price);
 
-            console.log("data saved in the cache");
-        }
-    });
+    //         console.log("data saved in the cache");
+    //     }
+    // });
 
     // making a new market post  request to the server 
     // $('#btn-new-mktData').click(e => {
