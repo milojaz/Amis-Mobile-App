@@ -24,6 +24,7 @@
         $('.collapsible').collapsible();
         $('.datepicker').datepicker();
 
+        
         // Gallon for Palm Oil
         // $('#kg_div').hide();
         // $('#gallon_div').hide();
@@ -48,57 +49,237 @@
 
         // hide all east district markets by defaults
         function east() {
-            $('#kai_markets_div').hide();
-            $('#ken_markets_div').hide();
-            $('#kon_markets_div').hide();
+            $('.kai_markets_div').hide();
+            $('.ken_markets_div').hide();
+            $('.kon_markets_div').hide();
         }
-        $('#kai_markets_div').hide();
-        $('#ken_markets_div').hide();
-        $('#kon_markets_div').hide();
+        $('.kai_markets_div').hide();
+        $('.ken_markets_div').hide();
+        $('.kon_markets_div').hide();
 
         // hide all west district markets by defaults
         function west() {
-            $('#fre_markets_div').hide();
+            $('.fre_markets_div').hide();
         }
-        $('#fre_markets_div').hide();
+        $('.fre_markets_div').hide();
 
         // hide all north east district markets by defaults
         function north_east() {
-            $('#bom_markets_div').hide();
-            $('#koi_markets_div').hide();
-            $('#ton_markets_div').hide();
-            $('#fal_markets_div').hide();
+            $('.bom_markets_div').hide();
+            $('.koi_markets_div').hide();
+            $('.ton_markets_div').hide();
+            $('.fal_markets_div').hide();
         }
-        $('#bom_markets_div').hide();
-        $('#koi_markets_div').hide();
-        $('#ton_markets_div').hide();
-        $('#fal_markets_div').hide();
+        $('.bom_markets_div').hide();
+        $('.koi_markets_div').hide();
+        $('.ton_markets_div').hide();
+        $('.fal_markets_div').hide();
 
         // hide all north west district markets by default
         function north_west() {
-            $('#kam_markets_div').hide();
-            $('#plo_markets_div').hide();
-            $('#kar_markets_div').hide();
+            $('.kam_markets_div').hide();
+            $('.plo_markets_div').hide();
+            $('.kar_markets_div').hide();
         }
-        $('#kam_markets_div').hide();
-        $('#plo_markets_div').hide();
-        $('#kar_markets_div').hide();
+        $('.kam_markets_div').hide();
+        $('.plo_markets_div').hide();
+        $('.kar_markets_div').hide();
 
         // hide all south district markets by default
         function south() {
-            $('#bo_markets_div').hide();
-            $('#bon_markets_div').hide();
-            $('#moy_markets_div').hide();
-            $('#puj_markets_div').hide();
+            $('.bo_markets_div').hide();
+            $('.bon_markets_div').hide();
+            $('.moy_markets_div').hide();
+            $('.puj_markets_div').hide();
         }
-        $('#bo_markets_div').hide();
-        $('#bon_markets_div').hide();
-        $('#moy_markets_div').hide();
-        $('#puj_markets_div').hide();
+        $('.bo_markets_div').hide();
+        $('.bon_markets_div').hide();
+        $('.moy_markets_div').hide();
+        $('.puj_markets_div').hide();
 
         // hide market type by default
         $('#market_type_div').hide();
+
+
+
+        // SHOW AND HIDE DISTRICT MARKETS WHEN IT'S DISCTRICT IS SELECTED
         
+        $('.mktDistrict').on('change', function(){
+            if ($(this).val() == 'Kaliahun') {
+                $('.kai_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.ken_markets_div').hide();
+                $('.kon_markets_div').hide();
+                west()
+                north_east()
+                north_west()
+                south()
+
+            } else if ($(this).val() == 'Kenema') {
+                $('.ken_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.kai_markets_div').hide();
+                $('.kon_markets_div').hide();
+                west()
+                north_east()
+                north_west()
+                south()
+                
+            } else if ($(this).val() == 'Kono') {
+                $('.kon_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.kai_markets_div').hide();
+                $('.ken_markets_div').hide();
+                west()
+                north_east()
+                north_west()
+                south()
+
+            } else if ($(this).val() == 'Freetown') {
+                $('.fre_markets_div').show();
+
+                // hide all other district region markets including this region
+                east()
+                north_east()
+                north_west()
+                south()
+
+            } else if ($(this).val() == 'Bombali') {
+                $('.bom_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.koi_markets_div').hide();
+                $('.ton_markets_div').hide();
+                $('.fal_markets_div').hide();
+                east()
+                west()
+                north_west()
+                south()
+
+            } else if ($(this).val() == 'Koinadugu') {
+                $('.koi_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.bom_markets_div').hide();
+                $('.ton_markets_div').hide();
+                $('.fal_markets_div').hide();
+                east()
+                west()
+                north_west()
+                south()
+
+            } else if ($(this).val() == 'Tonkolili') {
+                $('.ton_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.bom_markets_div').hide();
+                $('.koi_markets_div').hide();
+                $('.fal_markets_div').hide();
+                east()
+                west()
+                north_west()
+                south()
+
+            } else if ($(this).val() == 'Falaba') {
+                $('.fal_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.koi_markets_div').hide();
+                $('.ton_markets_div').hide();
+                $('.bom_markets_div').hide();
+                east()
+                west()
+                north_west()
+                south()
+
+            } else if ($(this).val() == 'Kambia') {
+                $('.kam_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.plo_markets_div').hide();
+                $('.kar_markets_div').hide();
+                east()
+                west()
+                north_east()
+                south()
+
+            } else if ($(this).val() == 'PortLoko') {
+                $('.plo_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.kam_markets_div').hide();
+                $('.kar_markets_div').hide();
+                east()
+                west()
+                north_east()
+                south()
+
+            } else if ($(this).val() == 'Karene') {
+                $('.kar_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.kam_markets_div').hide();
+                $('.plo_markets_div').hide();
+                east()
+                west()
+                north_east()
+                south()
+
+            } else if ($(this).val() == 'Bo') {
+                $('.bo_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.bon_markets_div').hide();
+                $('.moy_markets_div').hide();
+                $('.puj_markets_div').hide();
+                east()
+                west()
+                north_east()
+                north_west()
+
+            } else if ($(this).val() == 'Bonthe') {
+                $('.bon_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.bo_markets_div').hide();
+                $('.moy_markets_div').hide();
+                $('.puj_markets_div').hide();
+                east()
+                west()
+                north_east()
+                north_west()
+
+            } else if ($(this).val() == 'Moyamba') {
+                $('.moy_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.bo_markets_div').hide();
+                $('.bon_markets_div').hide();
+                $('.puj_markets_div').hide();
+                east()
+                west()
+                north_east()
+                north_west()
+
+            } else if ($(this).val() == 'Pujehun') {
+                $('.puj_markets_div').show();
+
+                // hide all other district region markets including this region
+                $('.bo_markets_div').hide();
+                $('.bon_markets_div').hide();
+                $('.moy_markets_div').hide();
+                east()
+                west()
+                north_east()
+                north_west()
+            }
+        });
+
+        // END OF HIDE AND SHOW DISTRICT MARKETS INTERACTION
+
         // hide all chiefdoms by default
         // west 
         $('#West_Chiefdom_Div').hide();
@@ -221,7 +402,7 @@
         });
 
         // check the select district and display it markets
-        $('.East_Districts').on('change', function () {
+        $('#East_Districts').on('change', function () {
             // calling all the hide functions except the east
             west();
             north_east();
@@ -263,7 +444,7 @@
         });
 
         // west district markets function
-        $('.West_Districts').on('change', function () {
+        $('#West_Districts').on('change', function () {
             // hide all hide market function except the west
             east();
             north_east();
@@ -292,7 +473,7 @@
         });
 
         // north east district markets change function
-        $('.North_East_Districts').on('change', function () {
+        $('#North_East_Districts').on('change', function () {
             // calling all hide market functions except north-east
             east();
             west();
@@ -345,7 +526,7 @@
         });
 
         // north west district markets change function
-        $('.North_West_Districts').on('change', function () {
+        $('#North_West_Districts').on('change', function () {
             // calling all the hide markets functions expect north west
             east();
             west();
@@ -382,7 +563,7 @@
         });
 
         // south district markets change function
-        $('.South_Districts').on('change', function () {
+        $('#South_Districts').on('change', function () {
             // calling the hide markets functions except the south
             east();
             west();

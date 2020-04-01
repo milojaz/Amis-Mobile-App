@@ -14,6 +14,7 @@ var prodMarketRef = firebase.database().ref('productMarketData');
 
 var offlineData = [];
 
+
 // this event listener is listening for a form submit
 document.getElementById('productMarketForm').addEventListener('submit', submitMarketForm);
 
@@ -23,17 +24,75 @@ function submitMarketForm(e) {
     //preventing the form from submit automatically
     e.preventDefault();
 
+    // arrays definition
+    var districtsArr = [];
+    var marketPlaceArr = [];
+    var marketCheifdomArr = [];
+    var marketProductArr = [];
+
+    // temp arrays
+    var disTemp = [];
+    var mktPlaceTemp = [];
+    var mktCheifdomTemp = [];
+    var mktProductTemp = [];
+
+    // get the market district
+    [...document.querySelectorAll('select[name^="mktDistrict"]')].forEach(sel => districtsArr.push(sel.value) );
+
+    // get the market chiefdom
+    [...document.querySelectorAll('select[name^="mktChiefdom"]')].forEach(sel => marketCheifdomArr.push(sel.value) );
+
+    // get the market place
+    [...document.querySelectorAll('select[name^="marketPlace"]')].forEach(sel => marketPlaceArr.push(sel.value) );
+
+    // get the market product
+    [...document.querySelectorAll('select[name^="mktProductName"]')].forEach(sel => marketProductArr.push(sel.value) );
+
+
+    // loop through the district array
+    for(let i of districtsArr){
+        i && disTemp.push(i); // copy each non-empty value to the 'tempArray' array
+
+        districtsArr = disTemp; // assign the tempArray to the districtArray
+    }
+
+    // loop through the market chiefdom array
+    for(let i of marketCheifdomArr){
+        i && mktCheifdomTemp.push(i); // copy each non-empty value to the 'tempArray' array
+
+        marketCheifdomArr = mktCheifdomTemp; // assign the tempArray to the cheifdomArray
+    }
+
+    // loop through the market place array
+    for(let i of marketPlaceArr){
+        i && mktPlaceTemp.push(i); // copy each non-empty value to the 'tempArray' array
+
+        marketPlaceArr = mktPlaceTemp; // assign the tempArray to the marketPlaceArray
+    }
+
+    // loop through the market product array
+    for(let i of marketProductArr){
+        i && mktProductTemp.push(i); // copy each non-empty value to the 'tempArray' array
+
+        marketProductArr = mktProductTemp; // assign the tempArray to the marketProductArray
+    }
+
+    console.log(districtsArr);
+    console.log(marketCheifdomArr);
+    console.log(marketPlaceArr);
+    console.log(marketProductArr);
+
     // getting the values
     var prodMktLocality = getInputValue('mktLocality');
-    // var prodMktChiefdom = getInputValue('mktChiefdom');
-    var prodMktDistrict = getInputValue('mktDistrict');
-    // var prodMktRegion = getInputValue('mktRegion');
-    var marketPlace = getInputValue('marketPlace');
+    var prodMktChiefdom = marketCheifdomArr[0];
+    var prodMktDistrict = districtsArr[0];
+    var prodMktRegion = getInputValue('mktRegion');
+    var marketPlace = marketPlaceArr[0];
     var marketType = getInputValue('marketType');
     var prodMktEnumerator = getInputValue('mktEnumerator');
     var prodMktDate = getInputValue('mktDate');
     // var mktProductCategory = getInputValue('mktProductCategory');
-    var prodName = getInputValue('mktProductName');
+    var prodName = marketProductArr[0];
     var prodMktWHS_Unit = getInputValue('WHS_Unit');
     var prodMktWHS_Weight = getInputValue('WHS_Weight');
     var prodMktWHS_Price = parseInt(getInputValue('WHS_Price'));
@@ -44,12 +103,15 @@ function submitMarketForm(e) {
     var prodMktFG_Weight = getInputValue('FG_Weight');
     var prodMktFG_Price = parseInt(getInputValue('FG_Price'));
 
+    console.log(`region: ${prodMktRegion}`);
     console.log(`locality: ${prodMktLocality}`)
-    // console.log(`chiefdom: ${prodMktChiefdom}`)
+    console.log(`chiefdom: ${prodMktChiefdom}`)
     console.log(`district: ${prodMktDistrict}`)
     console.log(`market name: ${marketPlace}`)
     console.log(`market type: ${marketType}`)
-    console.log(`produdct: ${prodName}`)
+    console.log(`Product: ${prodName}`)
+
+    
     
 
     // verify 
@@ -142,6 +204,12 @@ function submitMarketForm(e) {
 // function to get form inputs
 function getInputValue(id) {
     return document.getElementById(id).value;
+}
+
+function getInputValueClass(cls) {
+
+    //var data = 
+    return document.querySelector(cls).value;
 }
 
 // SEND AND SAVE MESSAGE TO FIREBASE FUNCTION
