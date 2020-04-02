@@ -44,7 +44,11 @@ module.exports = {
             mktDistrict,
             mktRegion,
             mktEnumerator,
+            marketPlace,
+            mktProductCategory,
             mktProductName,
+            marketType,
+            mktDate,
             WHS_Unit,
             WHS_Weight,
             WHS_Price,
@@ -56,15 +60,17 @@ module.exports = {
             FG_Price,
         } = req.body;
 
-        console.log(mktDistrict);
-
         var newMarketDataFlow = new marketDataModel({
             mktLocality: mktLocality,
             mktChiefdom: mktChiefdom,
             mktDistrict: mktDistrict,
             mktRegion: mktRegion,
             mktEnumerator: mktEnumerator,
+            marketPlace: marketPlace,
+            mktProductCategory: mktProductCategory,
             mktProductName: mktProductName,
+            marketType: marketType,
+            mktDate: mktDate,
             WHS_Unit: WHS_Unit,
             WHS_Weight: parseInt(WHS_Weight),
             WHS_Price: parseInt(WHS_Price),
