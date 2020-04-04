@@ -32,7 +32,7 @@ function submitMarketForm(e) {
     var marketType = getInputValue('marketType');
     var prodMktEnumerator = getInputValue('mktEnumerator');
     var prodMktDate = getInputValue('mktDate');
-    var mktProductCategory = getInputValue('mktProductCategory');
+    var mktProductCategory = getInputValue('productCategory');
     var prodName = getInputValue('mktProductName');
     var prodMktWHS_Unit = getInputValue('WHS_Unit');
     var prodMktWHS_Weight = getInputValue('WHS_Weight');
