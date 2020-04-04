@@ -54,7 +54,7 @@ function submitMarketForm(e) {
 
             console.log("connected");
             //calling the send and save data
-            saveMarketData(prodMktLocality, prodMktChiefdom, prodMktDistrict, prodMktRegion, marketPlace, marketType, prodMktEnumerator, 
+            saveMarketData(prodMktLocality, prodMktChiefdom, prodMktDistrict, prodMktRegion, marketPlace, marketType, prodMktEnumerator,
                 prodMktDate, mktProductCategory, prodName, prodMktWHS_Unit, prodMktWHS_Weight, prodMktWHS_Price,
                 prodMktRET_Unit, prodMktRET_Weight, prodMktRET_Price, prodMktFG_Unit, prodMktFG_Weight, prodMktFG_Price);
 
@@ -62,7 +62,7 @@ function submitMarketForm(e) {
         } else {
             console.log("not connected");
 
-            offlineData += saveMarketData(prodMktLocality, prodMktChiefdom, prodMktDistrict, prodMktRegion, marketPlace, marketType, prodMktEnumerator, 
+            offlineData += saveMarketData(prodMktLocality, prodMktChiefdom, prodMktDistrict, prodMktRegion, marketPlace, marketType, prodMktEnumerator,
                 prodMktDate, mktProductCategory, prodName, prodMktWHS_Unit, prodMktWHS_Weight, prodMktWHS_Price,
                 prodMktRET_Unit, prodMktRET_Weight, prodMktRET_Price, prodMktFG_Unit, prodMktFG_Weight, prodMktFG_Price);
 
@@ -74,52 +74,52 @@ function submitMarketForm(e) {
     // $('#btn-new-mktData').click(e => {
     //     e.preventDefault();
 
-        // // getting the values
-        // var prodMktLocality = getInptValue('mktLocality');
-        // var prodMktChiefdom = getInptValue('mktChiefdom');
-        // var prodMktDistrict = getInptValue('mktDistrict');
-        // var prodMktRegion = getInptValue('mktRegion');
-        // var marketPlace = getInptValue('marketPlace');
-        // var prodMktEnumerator = getInptValue('mktEnumerator');
-        // var mktProductCategory = getInptValue('mktProductCategory');
-        // var prodName = getInptValue('mktProductName');
-        // var prodMktWHS_Unit = getInptValue('WHS_Unit');
-        // var prodMktWHS_Weight = parseInt(getInptValue('WHS_Weight'));
-        // var prodMktWHS_Price = parseInt(getInptValue('WHS_Price'));
-        // var prodMktRET_Unit = getInptValue('RET_Unit');
-        // var prodMktRET_Weight = parseInt(getInptValue('RET_Weight'));
-        // var prodMktRET_Price = parseInt(getInptValue('RET_Price'));
-        // var prodMktFG_Unit = getInptValue('FG_Unit');
-        // var prodMktFG_Weight = parseInt(getInptValue('FG_Weight'));
-        // var prodMktFG_Price = parseInt(getInptValue('FG_Price'));
+    // // getting the values
+    // var prodMktLocality = getInptValue('mktLocality');
+    // var prodMktChiefdom = getInptValue('mktChiefdom');
+    // var prodMktDistrict = getInptValue('mktDistrict');
+    // var prodMktRegion = getInptValue('mktRegion');
+    // var marketPlace = getInptValue('marketPlace');
+    // var prodMktEnumerator = getInptValue('mktEnumerator');
+    // var mktProductCategory = getInptValue('mktProductCategory');
+    // var prodName = getInptValue('mktProductName');
+    // var prodMktWHS_Unit = getInptValue('WHS_Unit');
+    // var prodMktWHS_Weight = parseInt(getInptValue('WHS_Weight'));
+    // var prodMktWHS_Price = parseInt(getInptValue('WHS_Price'));
+    // var prodMktRET_Unit = getInptValue('RET_Unit');
+    // var prodMktRET_Weight = parseInt(getInptValue('RET_Weight'));
+    // var prodMktRET_Price = parseInt(getInptValue('RET_Price'));
+    // var prodMktFG_Unit = getInptValue('FG_Unit');
+    // var prodMktFG_Weight = parseInt(getInptValue('FG_Weight'));
+    // var prodMktFG_Price = parseInt(getInptValue('FG_Price'));
 
-        // ajax request to make a new product
-        // $.ajax({
-        //     type: 'POST',
-        //     url: '/inputMarketData',
-        //     data: {
-        //         mktLocality: prodMktLocality,
-        //         mktChiefdom: prodMktChiefdom,
-        //         mktDistrict: prodMktDistrict,
-        //         mktRegion: prodMktRegion,
-        //         marketPlace: marketPlace,
-        //         mktEnumerator: prodMktEnumerator,
-        //         mktProductName: prodName,
-        //         mktProductCategory: mktProductCategory,
-        //         WHS_Unit: prodMktWHS_Unit,
-        //         WHS_Weight: prodMktWHS_Weight,
-        //         WHS_Price: prodMktWHS_Price,
-        //         RET_Unit: prodMktRET_Unit,
-        //         RET_Weight: prodMktRET_Weight,
-        //         RET_Price: prodMktRET_Price,
-        //         FG_Unit: prodMktFG_Unit,
-        //         FG_Weight: prodMktFG_Weight,
-        //         FG_Price: prodMktFG_Price
-        //     },
-        //     success: function(response) {
+    // ajax request to make a new product
+    // $.ajax({
+    //     type: 'POST',
+    //     url: '/inputMarketData',
+    //     data: {
+    //         mktLocality: prodMktLocality,
+    //         mktChiefdom: prodMktChiefdom,
+    //         mktDistrict: prodMktDistrict,
+    //         mktRegion: prodMktRegion,
+    //         marketPlace: marketPlace,
+    //         mktEnumerator: prodMktEnumerator,
+    //         mktProductName: prodName,
+    //         mktProductCategory: mktProductCategory,
+    //         WHS_Unit: prodMktWHS_Unit,
+    //         WHS_Weight: prodMktWHS_Weight,
+    //         WHS_Price: prodMktWHS_Price,
+    //         RET_Unit: prodMktRET_Unit,
+    //         RET_Weight: prodMktRET_Weight,
+    //         RET_Price: prodMktRET_Price,
+    //         FG_Unit: prodMktFG_Unit,
+    //         FG_Weight: prodMktFG_Weight,
+    //         FG_Price: prodMktFG_Price
+    //     },
+    //     success: function(response) {
 
-        //     }
-        // });
+    //     }
+    // });
     // });
 
 

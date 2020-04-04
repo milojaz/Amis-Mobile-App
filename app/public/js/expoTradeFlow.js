@@ -5,8 +5,6 @@ var expoTradeFlowRef = firebase.database().ref('exportTradeFlowData');
 // setting the database app persistence for offline cache storage
 // FirebaseDatabase.service.setPersistenceEnabled(true);
 
-var offlineData = []
-
 // will store the offline data in an array
 var offlineData = [];
 
@@ -39,24 +37,20 @@ function submitExportTradeForm(e) {
         if (snap.val() === true) {
             console.log("connected");
             //calling the send and save data
-            
+
             saveExpoTradeData(name, email, address, phone, products, weight, tonage, value, district, region, districtFROM, countryTO, date);
-            
+
             // resetting the array length
             offlineData.length = 0;
 
             // show submitAlert
             document.querySelector('.submitAlert').style.display = 'block';
 
-            // hide submitAlert after 3 seconds
-            setTimeout(function() {
-                document.querySelector('.submitAlert').style.display = 'none';
-            }, 10000);
-            
+
         } else {
 
             console.log("not connected");
-            
+
             offlineData += saveExpoTradeData(name, email, address, phone, products, weight, tonage, value, district, region, districtFROM, countryTO, date);
 
             console.log("data saved in the cache");
@@ -64,10 +58,10 @@ function submitExportTradeForm(e) {
             // show errorAlert
             document.querySelector('.errorAlert').style.display = 'block';
 
-            // hide errorAlert after 3 seconds
-            setTimeout(function() {
-                document.querySelector('.errorAlert').style.display = 'none';
-            }, 10000);
+            // // hide errorAlert after 3 seconds
+            // setTimeout(function() {
+            //     document.querySelector('.errorAlert').style.display = 'none';
+            // }, 10000);
         }
     });
 
