@@ -77,10 +77,6 @@ function submitMarketForm(e) {
         marketProductArr = mktProductTemp; // assign the tempArray to the marketProductArray
     }
 
-    console.log(districtsArr);
-    console.log(marketCheifdomArr);
-    console.log(marketPlaceArr);
-    console.log(marketProductArr);
 
     // getting the values
     var prodMktLocality = getInputValue('mktLocality');

@@ -13,15 +13,15 @@ var passport = require('passport');
 require('./app/config/passport')(passport);
 
 // getting the sevicekey
-// var serviceAccount = require("./amisproject-29c95-firebase-adminsdk-lfydx-042dd543c7");
+var serviceAccount = require("./amisproject-29c95-firebase-adminsdk-lfydx-042dd543c7");
 
-var serviceAccount = require("./greentaCollectServiceAccountKey");
+// var serviceAccount = require("./greentaCollectServiceAccountKey");
 
 // initializing the app
 firebase.initializeApp({
     credential: firebase.credential.cert(serviceAccount),
-    databaseURL: "https://greenta-collect.firebaseio.com/" 
-    // "https://amisproject-29c95.firebaseio.com"
+    databaseURL: "https://amisproject-29c95.firebaseio.com" 
+    // "https://amisproject-29c95.firebaseio.com" https://greenta-collect.firebaseio.com/
 });
 
 //connecting to mongodb
