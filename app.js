@@ -26,17 +26,17 @@ firebase.initializeApp({
 
 //connecting to mongodb
 // OFFLINE CONNECTION
-// mongoose.connect('mongodb://localhost/amisapp', { useNewUrlParser: true })
-//     .then(() => console.log('Database Local Connection Successful'))
-//     .catch(err => console.log(err))
+mongoose.connect('mongodb://localhost/amisapp', { useNewUrlParser: true })
+    .then(() => console.log('Database Local Connection Successful'))
+    .catch(err => console.log(err))
 
 //requring the database configuration
-var db = require('./app/config/dbConfig').MongoURI;
+// var db = require('./app/config/dbConfig').MongoURI;
 
-// // connecting to mongo
-mongoose.connect(db, { useNewUrlParser: true })
-    .then(() => console.log('Database Connection Successful'))
-    .catch(err => console.log(err));
+// connecting to mongo
+// mongoose.connect(db, { useNewUrlParser: true })
+//     .then(() => console.log('Database Connection Successful'))
+//     .catch(err => console.log(err));
 
 
 // getting access to the database

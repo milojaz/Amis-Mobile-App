@@ -27,23 +27,24 @@ router.route('/logout')
     .get(defaultController.logout);
 
 router.route('/inputMarketData')
-    .get(isUserAuthenticated, defaultController.marketGet)
-    .post(isUserAuthenticated, defaultController.marketDataPost);
+    .get(defaultController.marketGet)
+    .post(defaultController.marketDataPost);
 
 
+//  isUserAuthenticated was remove from the below routes
 router.route('/inputTradeFlowData')
-    .get(isUserAuthenticated, defaultController.tradeFlowGet)
-    .post(isUserAuthenticated, defaultController.tradeFlowPost);
+    .get(defaultController.tradeFlowGet)
+    .post(defaultController.tradeFlowPost);
 
 router.route('/inputExportFlow')
-    .get(isUserAuthenticated, defaultController.exportFlowGet)
-    .post(isUserAuthenticated, defaultController.exportFlowPost);
+    .get(defaultController.exportFlowGet)
+    .post(defaultController.exportFlowPost);
 
 router.route('/inputStockLevel')
-    .get(isUserAuthenticated, defaultController.stockGet)
-    .post(isUserAuthenticated, defaultController.stockDataPost);
+    .get(defaultController.stockGet)
+    .post(defaultController.stockDataPost);
 
 router.route('/about')
-    .get(isUserAuthenticated, defaultController.aboutGet);
+    .get(defaultController.aboutGet);
 
 module.exports = router;

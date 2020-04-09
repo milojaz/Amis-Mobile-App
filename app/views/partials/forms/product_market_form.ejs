@@ -196,9 +196,9 @@
                                                 <option value="Tankoro">Tankoro</option>
                                                 <option value="Toli">Toli</option>
                                             </select>
-                                        </div>
-                                        <!-- end of Kono chiefdoms -->
-                                    <!-- End of East Chiefdom -->
+                                </div>
+                                <!-- end of Kono chiefdoms -->
+                                <!-- End of East Chiefdom -->
 
                                     <!-- North East Chiefdom -->
                                         <!-- Bombali chiefdoms -->
@@ -254,9 +254,9 @@
                                                 <option value="Tane">Tane</option>
                                                 <option value="Yoni">Yoni</option>
                                             </select>
-                                        </div>
-                                        <!-- end of Tonkolili chiefdoms -->
-                                    <!-- end of north east chiefdom -->
+                                </div>
+                                <!-- end of Tonkolili chiefdoms -->
+                                <!-- end of north east chiefdom -->
 
                                     <!-- North West Chiefdoms -->
                                         <!-- Kambia chiefdoms -->
@@ -289,9 +289,9 @@
                                                 <option value="T.M._Safroko">T.M. Safroko</option>
                                                 <option value="Sanda_Magbolontor">Sanda Magbolontor</option>
                                             </select>
-                                        </div>
-                                        <!-- end of Port Loko chiefdoms -->
-                                    <!-- End of north west chiefdom -->
+                                </div>
+                                <!-- end of Port Loko chiefdoms -->
+                                <!-- End of north west chiefdom -->
 
                                     <!-- South Chiefdoms -->
                                         <!-- Bo chiefdoms -->
@@ -373,9 +373,9 @@
                                                 <option value="Sowa">Sowa</option>
                                                 <option value="Yekomo_Kpukumu_Krim">Yekomo Kpukumu Krim</option>
                                             </select>
-                                        </div>
-                                        <!-- end of Pujehun chiefdoms -->
-                                    <!-- End of South chiefdom -->
+                                </div>
+                                <!-- end of Pujehun chiefdoms -->
+                                <!-- End of South chiefdom -->
 
                                 <!-- End of Chiefdom -->
 
@@ -413,7 +413,7 @@
                                             <option value="Konomayi_Park">Konomayi Park (KON)</option>
                                             <option value="Tankoro">Tankoro (KON)</option>
                                         </select>
-                                    </div>
+                                </div>
                                 <!-- end of east markets -->
 
                                 <!-- west_markets -->
@@ -432,7 +432,7 @@
                                             <option value="Congo_Market">Congo Market (FRE)</option>
                                             <option value="Kroo_Town_Road_Market">Kroo Town Road Market  (FRE)</option>
                                         </select>
-                                    </div>
+                                </div>
                                 <!-- end of west matkets -->
 
                                 <!-- north_east_markets -->
@@ -496,7 +496,7 @@
                                             <option value="Musaia">Musaia (FAL)</option>
                                             <option value="Walia">Walia (FAL)</option>
                                         </select>
-                                    </div>
+                                </div>
                                 <!-- end of north_east markets -->
 
                                 <!-- north_west_markets -->
@@ -536,7 +536,7 @@
                                             <option value="Kamalo">Kamalo (KAR)</option>
                                             <option value="Fintonia_Samaya">Fintonia/Samaya (KAR)</option>
                                         </select>
-                                    </div>
+                                </div>
                                 <!-- end of north_west markets -->
 
                                 <!-- south_markets -->
@@ -615,10 +615,10 @@
                                     </select>
                                 </div>
                                 <!-- end of market type -->
-                                
+
                                 <div class="input-field">
                                     <label for="mktEnumerator">Enumerator</label>
-                                    <input type="text" name="mktEnumerator" value="<%= enumerator.username %>" id="mktEnumerator" required>
+                                    <input type="text" name="mktEnumerator" value="" id="mktEnumerator" required>
                                 </div>
                                 <div class="input-field">
                                     <label for="mktDate">Date</label>
@@ -670,7 +670,7 @@
                                         <option value="Fungicides">Fungicides</option>
                                         <option value="Farm_labour">Farm labour</option>
                                         <option value="Tractor">Tractor (land preparation)</option>
-                                    </select>  
+                                    </select>
                                 </div>
                                 <!-- end of Ag. Input's products -->
 
@@ -853,16 +853,16 @@
                                         <option  id="coffee" value="Coffee">Coffee</option>
                                     </select>
                                 </div> -->
-                            
+
                         </li>
                         <!-- Agricultural Input for Wholesales Price -->
                         <li>
                             <div class="collapsible-header">Wholesales Price</div>
-                                <div class="collapsible-body">
-                                    <div class="input-field">
-                                        <!-- <label for="WHS_Unit">Unit Of Measure</label>
+                            <div class="collapsible-body">
+                                <div class="input-field">
+                                    <!-- <label for="WHS_Unit">Unit Of Measure</label>
                                         <input type="text" name="WHS_Unit" id="WHS_Unit" required> -->
-                                        <select name="WHS_Unit" id="WHS_Unit" required>
+                                    <select name="WHS_Unit" id="WHS_Unit" required>
                                             <option value="" class="gray-text" required disabled selected>Wholesales Unit of Measure</option>
                                             <option  id="Cup" value="Cup">Cup</option>
                                             <option  id="Bag" value="Bag">Bag</option>
@@ -892,23 +892,23 @@
                                             <option  id="T_P" value="T/P">T/P</option>
                                             <option  id="Other" value="Other">Other (specify)</option>
                                         </select>
-                                    </div>
-                                
-                                    <div class="input-field kg">
-                                        <label for="WHS_Weight">Weight (Kg)</label>
-                                        <input type="number" step="any" min="0" name="WHS_Weight" id="WHS_Weight">
-                                    </div>
-                                    <!-- removed the maximum max="10" from the input field -->
-                                    <!-- <div class="input-field gallon">
+                                </div>
+
+                                <div class="input-field kg">
+                                    <label for="WHS_Weight">Weight (Kg)</label>
+                                    <input type="number" step="any" min="0" name="WHS_Weight" id="WHS_Weight">
+                                </div>
+                                <!-- removed the maximum max="10" from the input field -->
+                                <!-- <div class="input-field gallon">
                                         <label for="WHS_Weight">Weight (gallon)</label>
                                         <input type="number" name="WHS_Weight" id="WHS_Weight">
                                     </div> -->
 
-                                    <div class="input-field">
-                                        <label for="WHS_Price">Price(Leone)</label>
-                                        <input type="number" name="WHS_Price" id="WHS_Price" required>
-                                    </div>
+                                <div class="input-field">
+                                    <label for="WHS_Price">Price(Leone)</label>
+                                    <input type="number" name="WHS_Price" id="WHS_Price" required>
                                 </div>
+                            </div>
                             <!-- </div> -->
                         </li>
                         <!-- Agricultural Input for Retail Price -->

@@ -1,62 +1,53 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema
 
-var tradeFlowSchema = mongoose.Schema({
-    locality: {
+var tradeFlowSchema = new Schema({
+    product: {
         type: String,
-        required: true
+        required: true,
     },
-    chiefdom: {
-        type: String
-    },
-    district: {
+    tonage: {
         type: String,
-        required: true
+        required: true,
     },
-    region: {
+    value: {
         type: String,
-        required: true
+        required: true,
     },
     enumerator: {
         type: String,
-        required: true
+        required: true,
     },
     locality_from: {
         type: String,
-        required: true
+        required: true,
     },
     chiefdom_from: {
         type: String,
-        required: true
+        required: true,
     },
     district_from: {
         type: String,
-        required: true
-    },
-    country_from:  {
-        type: String,
-        required: true
+        required: true,
     },
     locality_to: {
         type: String,
-        required: true
+        required: true,
     },
-    chiefdom_to:  {
+    chiefdom_to: {
         type: String,
-        required: true
+        required: true,
     },
     district_to: {
         type: String,
-        required: true
+        required: true,
     },
-    country_to: {
-        type: String,
-        required: true
-    },
-    date:  {
+    date: {
         type: Date,
         default: Date.now()
     }
-    
+
 });
 
-module.exports =  mongoose.model('tradeFlowData', tradeFlowSchema);
+var tradeFlowData = mongoose.model('tradeFlowData', tradeFlowSchema);
+module.exports = tradeFlowData

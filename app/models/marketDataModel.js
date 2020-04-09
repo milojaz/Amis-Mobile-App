@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema
 
-var marketSchema = mongoose.Schema({
+var marketSchema = new Schema({
     mktLocality: {
         type: String,
         required: true
@@ -10,35 +11,28 @@ var marketSchema = mongoose.Schema({
     },
     mktDistrict: {
         type: String,
-        required: true
     },
     mktRegion: {
         type: String,
-        required: true
     },
     marketPlace: {
         type: String,
-        required: true
     },
     marketType: {
         type: String,
-        required: true
     },
     mktEnumerator: {
         type: String,
         required: true
     },
     productCategory: {
-        type: String,
-        required: true
+        type: String
     },
     mktProductName: {
         type: String,
-        required: true
     },
     WHS_Unit: {
         type: String,
-        required: true
     },
     WHS_Weight: {
         type: Number,
@@ -50,7 +44,6 @@ var marketSchema = mongoose.Schema({
     },
     RET_Unit: {
         type: String,
-        required: true
     },
     RET_Weight: {
         type: Number,
@@ -62,7 +55,6 @@ var marketSchema = mongoose.Schema({
     },
     FG_Unit: {
         type: String,
-        required: true
     },
     FG_Weight: {
         type: Number,
@@ -80,4 +72,5 @@ var marketSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('marketData', marketSchema);
+var MarketData = mongoose.model('MarketData', marketSchema);
+module.exports = MarketData

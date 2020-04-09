@@ -2,14 +2,13 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
 <script src="js/materialize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
 </script>
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 <script src="js/wow.min.js"></script>
 
 <script>
-    $(function () {
+    $(function() {
         new WOW().init();
         $('.sidenav').sidenav();
         $('select').formSelect();
@@ -300,7 +299,7 @@
         $('#Moy_Chiefdom_Div').hide();
         $('#Puj_Chiefdom_Div').hide();
 
-        function hideChiefdoms(){
+        function hideChiefdoms() {
             // north east
             $('#Bom_Chiefdom_Div').hide();
             $('#Koi_Chiefdom_Div').hide();
@@ -315,7 +314,7 @@
             $('#Puj_Chiefdom_Div').hide();
         }
 
-        function hideChiefdomForNorthEast(){
+        function hideChiefdomForNorthEast() {
             // west 
             $('#West_Chiefdom_Div').hide();
             // east
@@ -332,7 +331,7 @@
             $('#Puj_Chiefdom_Div').hide();
         }
 
-        function hideChiefdomForNorthWest(){
+        function hideChiefdomForNorthWest() {
             // west 
             $('#West_Chiefdom_Div').hide();
             // east
@@ -350,7 +349,7 @@
             $('#Puj_Chiefdom_Div').hide();
         }
 
-        function hideChiefdomForSouth(){
+        function hideChiefdomForSouth() {
             // west 
             $('#West_Chiefdom_Div').hide();
             // east
@@ -420,7 +419,7 @@
                 $('#Ken_Chiefdom_Div').hide();
                 $('#Kon_Chiefdom_Div').hide();
                 hideChiefdoms();
-            } else if( $(this).val() == 'Kenema' ){
+            } else if ($(this).val() == 'Kenema') {
                 $('#ken_markets_div').show();
                 $('#kai_markets_div').hide();
                 $('#kon_markets_div').hide();
@@ -430,7 +429,7 @@
                 $('#Kai_Chiefdom_Div').hide();
                 $('#Kon_Chiefdom_Div').hide();
                 hideChiefdoms();
-            } else if( $(this).val() == 'Kono' ){
+            } else if ($(this).val() == 'Kono') {
                 $('#kai_markets_div').hide();
                 $('#ken_markets_div').hide();
                 $('#kon_markets_div').show();
@@ -491,7 +490,7 @@
                 $('#Koi_Chiefdom_Div').hide();
                 $('#Ton_Chiefdom_Div').hide();
                 hideChiefdomForNorthEast();
-            } else if( $(this).val() == 'Koinadugu' ){
+            } else if ($(this).val() == 'Koinadugu') {
                 $('#bom_markets_div').hide();
                 $('#koi_markets_div').show();
                 $('#ton_markets_div').hide();
@@ -501,7 +500,7 @@
                 $('#Bom_Chiefdom_Div').hide();
                 $('#Ton_Chiefdom_Div').hide();
                 hideChiefdomForNorthEast();
-            } else if( $(this).val() == 'Tonkolili' ){
+            } else if ($(this).val() == 'Tonkolili') {
                 $('#bom_markets_div').hide();
                 $('#koi_markets_div').hide();
                 $('#ton_markets_div').show();
@@ -511,7 +510,7 @@
                 $('#Koi_Chiefdom_Div').hide();
                 $('#Bom_Chiefdom_Div').hide();
                 hideChiefdomForNorthEast();
-            } else if( $(this).val() == 'Falaba' ){
+            } else if ($(this).val() == 'Falaba') {
                 $('#bom_markets_div').hide();
                 $('#koi_markets_div').hide();
                 $('#ton_markets_div').hide();
@@ -542,7 +541,7 @@
                 $('#Kam_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Por_Chiefdom_Div').hide();
                 hideChiefdomForNorthWest();
-            } else if( $(this).val() == 'PortoLoko' ){
+            } else if ($(this).val() == 'PortoLoko') {
                 $('#kam_markets_div').hide();
                 $('#plo_markets_div').show();
                 $('#kar_markets_div').hide();
@@ -550,7 +549,7 @@
                 $('#Por_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Kam_Chiefdom_Div').hide();
                 hideChiefdomForNorthWest();
-            } else if( $(this).val() == 'Karene' ){
+            } else if ($(this).val() == 'Karene') {
                 $('#kam_markets_div').hide();
                 $('#plo_markets_div').hide();
                 $('#kar_markets_div').show();
@@ -582,7 +581,7 @@
                 $('#Moy_Chiefdom_Div').hide();
                 $('#Puj_Chiefdom_Div').hide();
                 hideChiefdomForSouth();
-            } else if( $(this).val() == 'Bonthe' ){
+            } else if ($(this).val() == 'Bonthe') {
                 $('#bo_markets_div').hide();
                 $('#bon_markets_div').show();
                 $('#moy_markets_div').hide();
@@ -593,7 +592,7 @@
                 $('#Moy_Chiefdom_Div').hide();
                 $('#Puj_Chiefdom_Div').hide();
                 hideChiefdomForSouth();
-            } else if( $(this).val() == 'Moyamba' ){
+            } else if ($(this).val() == 'Moyamba') {
                 $('#bo_markets_div').hide();
                 $('#bon_markets_div').hide();
                 $('#moy_markets_div').show();
@@ -603,7 +602,7 @@
                 $('#Bon_Chiefdom_Div').hide();
                 $('#Puj_Chiefdom_Div').hide();
                 hideChiefdomForSouth();
-            } else if( $(this).val() == 'Pujehun' ){
+            } else if ($(this).val() == 'Pujehun') {
                 $('#bo_markets_div').hide();
                 $('#bon_markets_div').hide();
                 $('#moy_markets_div').hide();
@@ -632,7 +631,7 @@
 
 
         // product category on change function check 
-        $('#mktProductCategory').on('change', function () {
+        $('#productCategory').on('change', function() {
             // check what value was selected
             // ag-input check
             if ($(this).val() == 'Ag_Inputs') {
@@ -808,7 +807,7 @@
         $('#puj_markets_div').hide()
 
         // product category on change function check 
-        $('#msuProductCategory').on('change', function () {
+        $('#msuProductCategory').on('change', function() {
             // check what value was selected
             // ag-input check
             if ($(this).val() == 'Ag_Inputs') {
@@ -966,7 +965,7 @@
         });
         
         // Stock Level
-        $('#ttmDistrict').on('change', function () {
+        $('#ttmDistrict').on('change', function() {
             if ($(this).val() == 'West_Area') {
                 $('.fre_markets_div').show()
                 $('.kai_markets_div').hide()
@@ -1215,9 +1214,9 @@
         // hide other input fields by default
         $('#fish_specific_input_div').hide();
 
-        $('.fish_products').on('change', function(){
+        $('.fish_products').on('change', function() {
 
-            if( $(this).val() == 'Other_fish' ){
+            if ($(this).val() == 'Other_fish') {
                 $('#fish_specific_input_div').show();
             }
 
