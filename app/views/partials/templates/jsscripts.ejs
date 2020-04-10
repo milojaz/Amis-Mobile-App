@@ -299,6 +299,7 @@
         $('#Moy_Chiefdom_Div').hide();
         $('#Puj_Chiefdom_Div').hide();
 
+        // hide all chiefdoms
         function hideChiefdoms() {
             // north east
             $('#Bom_Chiefdom_Div').hide();
@@ -410,9 +411,9 @@
 
             // check what value was selected
             if ($(this).val() == 'Kaliahun') {
-                $('#ken_markets_div').hide();
-                $('#kon_markets_div').hide();
-                $('#kai_markets_div').show();
+                $('.ken_markets_div').hide();
+                $('.kon_markets_div').hide();
+                $('.kai_markets_div').show();
                 $('#Kai_Chiefdom_Div').show(); // displaying the kaliahun chiefdoms
                 $('#market_type_div').show();
                 $('#West_Chiefdom_Div').hide();
@@ -420,9 +421,9 @@
                 $('#Kon_Chiefdom_Div').hide();
                 hideChiefdoms();
             } else if ($(this).val() == 'Kenema') {
-                $('#ken_markets_div').show();
-                $('#kai_markets_div').hide();
-                $('#kon_markets_div').hide();
+                $('.ken_markets_div').show();
+                $('.kai_markets_div').hide();
+                $('.kon_markets_div').hide();
                 $('#market_type_div').show();
                 $('#Ken_Chiefdom_Div').show(); // displaying the kenema chiefdoms
                 $('#West_Chiefdom_Div').hide();
@@ -430,9 +431,9 @@
                 $('#Kon_Chiefdom_Div').hide();
                 hideChiefdoms();
             } else if ($(this).val() == 'Kono') {
-                $('#kai_markets_div').hide();
-                $('#ken_markets_div').hide();
-                $('#kon_markets_div').show();
+                $('.kai_markets_div').hide();
+                $('.ken_markets_div').hide();
+                $('.kon_markets_div').show();
                 $('#market_type_div').show();
                 $('#Kon_Chiefdom_Div').show(); // displaying the kono chiefdoms
                 $('#West_Chiefdom_Div').hide();
@@ -481,45 +482,42 @@
 
             // check which value is selected
             if ($(this).val() == 'Bombali') {
-                $('#bom_markets_div').show();
-                $('#koi_markets_div').hide();
-                $('#ton_markets_div').hide();
-                $('#fal_markets_div').hide();
+                $('.bom_markets_div').show();
+                $('.koi_markets_div').hide();
+                $('.ton_markets_div').hide();
+                $('.fal_markets_div').hide();
                 $('#market_type_div').show();
                 $('#Bom_Chiefdom_Div').show(); // display all chiefdoms
                 $('#Koi_Chiefdom_Div').hide();
                 $('#Ton_Chiefdom_Div').hide();
                 hideChiefdomForNorthEast();
             } else if ($(this).val() == 'Koinadugu') {
-                $('#bom_markets_div').hide();
-                $('#koi_markets_div').show();
-                $('#ton_markets_div').hide();
-                $('#fal_markets_div').hide();
+                $('.bom_markets_div').hide();
+                $('.koi_markets_div').show();
+                $('.ton_markets_div').hide();
+                $('.fal_markets_div').hide();
                 $('#market_type_div').show();
                 $('#Koi_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Bom_Chiefdom_Div').hide();
                 $('#Ton_Chiefdom_Div').hide();
                 hideChiefdomForNorthEast();
             } else if ($(this).val() == 'Tonkolili') {
-                $('#bom_markets_div').hide();
-                $('#koi_markets_div').hide();
-                $('#ton_markets_div').show();
-                $('#fal_markets_div').hide();
+                $('.bom_markets_div').hide();
+                $('.koi_markets_div').hide();
+                $('.ton_markets_div').show();
+                $('.fal_markets_div').hide();
                 $('#market_type_div').show();
                 $('#Ton_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Koi_Chiefdom_Div').hide();
                 $('#Bom_Chiefdom_Div').hide();
                 hideChiefdomForNorthEast();
             } else if ($(this).val() == 'Falaba') {
-                $('#bom_markets_div').hide();
-                $('#koi_markets_div').hide();
-                $('#ton_markets_div').hide();
-                $('#fal_markets_div').show();
+                $('.bom_markets_div').hide();
+                $('.koi_markets_div').hide();
+                $('.ton_markets_div').hide();
+                $('.fal_markets_div').show();
                 $('#market_type_div').show();
-                // hideChiefdoms();
-                hideChiefdomForNorthEast();
-                // hideChiefdomForNorthWest();
-                // hideChiefdomForSouth();
+                hideChiefdoms();
             }
 
         });
@@ -534,30 +532,27 @@
 
             // check which value is selected
             if ($(this).val() == 'Kambia') {
-                $('#kam_markets_div').show();
-                $('#plo_markets_div').hide();
-                $('#kar_markets_div').hide();
+                $('.kam_markets_div').show();
+                $('.plo_markets_div').hide();
+                $('.kar_markets_div').hide();
                 $('#market_type_div').show();
                 $('#Kam_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Por_Chiefdom_Div').hide();
                 hideChiefdomForNorthWest();
             } else if ($(this).val() == 'PortoLoko') {
-                $('#kam_markets_div').hide();
-                $('#plo_markets_div').show();
-                $('#kar_markets_div').hide();
+                $('.kam_markets_div').hide();
+                $('.plo_markets_div').show();
+                $('.kar_markets_div').hide();
                 $('#market_type_div').show();
                 $('#Por_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Kam_Chiefdom_Div').hide();
                 hideChiefdomForNorthWest();
             } else if ($(this).val() == 'Karene') {
-                $('#kam_markets_div').hide();
-                $('#plo_markets_div').hide();
-                $('#kar_markets_div').show();
+                $('.kam_markets_div').hide();
+                $('.plo_markets_div').hide();
+                $('.kar_markets_div').show();
                 $('#market_type_div').show();
-                // hideChiefdoms();
-                // hideChiefdomForNorthEast();
-                hideChiefdomForNorthWest();
-                // hideChiefdomForSouth();
+                hideChiefdoms();
             }
         });
 
@@ -571,10 +566,10 @@
 
             // check for the selected value
             if ($(this).val() == 'Bo') {
-                $('#bo_markets_div').show();
-                $('#bon_markets_div').hide();
-                $('#moy_markets_div').hide();
-                $('#puj_markets_div').hide();
+                $('.bo_markets_div').show();
+                $('.bon_markets_div').hide();
+                $('.moy_markets_div').hide();
+                $('.puj_markets_div').hide();
                 $('#market_type_div').show();
                 $('#Bo_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Bon_Chiefdom_Div').hide();
@@ -582,10 +577,10 @@
                 $('#Puj_Chiefdom_Div').hide();
                 hideChiefdomForSouth();
             } else if ($(this).val() == 'Bonthe') {
-                $('#bo_markets_div').hide();
-                $('#bon_markets_div').show();
-                $('#moy_markets_div').hide();
-                $('#puj_markets_div').hide();
+                $('.bo_markets_div').hide();
+                $('.bon_markets_div').show();
+                $('.moy_markets_div').hide();
+                $('.puj_markets_div').hide();
                 $('#market_type_div').show();
                 $('#Bon_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Bo_Chiefdom_Div').hide();
@@ -593,20 +588,20 @@
                 $('#Puj_Chiefdom_Div').hide();
                 hideChiefdomForSouth();
             } else if ($(this).val() == 'Moyamba') {
-                $('#bo_markets_div').hide();
-                $('#bon_markets_div').hide();
-                $('#moy_markets_div').show();
-                $('#puj_markets_div').hide();
+                $('.bo_markets_div').hide();
+                $('.bon_markets_div').hide();
+                $('.moy_markets_div').show();
+                $('.puj_markets_div').hide();
                 $('#Moy_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Bo_Chiefdom_Div').hide();
                 $('#Bon_Chiefdom_Div').hide();
                 $('#Puj_Chiefdom_Div').hide();
                 hideChiefdomForSouth();
             } else if ($(this).val() == 'Pujehun') {
-                $('#bo_markets_div').hide();
-                $('#bon_markets_div').hide();
-                $('#moy_markets_div').hide();
-                $('#puj_markets_div').show();
+                $('.bo_markets_div').hide();
+                $('.bon_markets_div').hide();
+                $('.moy_markets_div').hide();
+                $('.puj_markets_div').show();
                 $('#market_type_div').show();
                 $('#Puj_Chiefdom_Div').show(); // display the chiefdoms
                 $('#Bon_Chiefdom_Div').hide();
@@ -631,7 +626,7 @@
 
 
         // product category on change function check 
-        $('#productCategory').on('change', function() {
+        $('#mktProductCategory').on('change', function() {
             // check what value was selected
             // ag-input check
             if ($(this).val() == 'Ag_Inputs') {

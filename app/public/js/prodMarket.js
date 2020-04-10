@@ -90,13 +90,13 @@ function submitMarketForm(e) {
     var mktProductCategory = getInputValue('mktProductCategory');
     var prodName = marketProductArr[0];
     var prodMktWHS_Unit = getInputValue('WHS_Unit');
-    var prodMktWHS_Weight = getInputValue('WHS_Weight');
+    var prodMktWHS_Weight = parseInt(getInputValue('WHS_Weight'));
     var prodMktWHS_Price = parseInt(getInputValue('WHS_Price'));
     var prodMktRET_Unit = getInputValue('RET_Unit');
-    var prodMktRET_Weight = getInputValue('RET_Weight');
+    var prodMktRET_Weight = parseInt(getInputValue('RET_Weight'));
     var prodMktRET_Price = parseInt(getInputValue('RET_Price'));
     var prodMktFG_Unit = getInputValue('FG_Unit');
-    var prodMktFG_Weight = getInputValue('FG_Weight');
+    var prodMktFG_Weight = parseInt(getInputValue('FG_Weight'));
     var prodMktFG_Price = parseInt(getInputValue('FG_Price'));
 
     // console.log(`region: ${prodMktRegion}`);
@@ -110,8 +110,6 @@ function submitMarketForm(e) {
     // console.log(`Category: ${mktProductCategory}`)
     // console.log(`Product: ${prodName}`)
 
-    
-    
 
     // verify 
     connectedRef.on("value", function(snap) {
@@ -212,7 +210,9 @@ function getInputValueClass(cls) {
 }
 
 // SEND AND SAVE MESSAGE TO FIREBASE FUNCTION
-function saveMarketData(locality, chiefdom, district, region, market_name, marketType, enumerator, date, productCategory, product, WHS_Unit, WHS_Weight, WHS_Price, RET_Unit, RET_Weight, RET_Price, FG_Unit, FG_Weight, FG_Price) {
+function saveMarketData(locality, chiefdom, district, region, market_name, marketType,
+    enumerator, date, productCategory, product, WHS_Unit, WHS_Weight, WHS_Price,
+    RET_Unit, RET_Weight, RET_Price, FG_Unit, FG_Weight, FG_Price) {
 
     var newProdMarketRef = prodMarketRef.push();
 

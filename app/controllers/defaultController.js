@@ -45,10 +45,8 @@ module.exports = {
             marketPlace,
             marketType,
             mktEnumerator,
-            marketPlace,
             mktProductCategory,
             mktProductName,
-            marketType,
             mktDate,
             WHS_Unit,
             WHS_Weight,
@@ -59,7 +57,6 @@ module.exports = {
             FG_Unit,
             FG_Weight,
             FG_Price,
-            date,
         } = req.body;
 
         var newMarketDataFlow = new MarketData({
@@ -70,21 +67,18 @@ module.exports = {
             marketPlace: marketPlace,
             marketType: marketType,
             mktEnumerator: mktEnumerator,
-            marketPlace: marketPlace,
             mktProductCategory: mktProductCategory,
             mktProductName: mktProductName,
-            marketType: marketType,
-            mktDate: mktDate,
-            WHS_Unit: parseInt(WHS_Unit),
+            date: mktDate,
+            WHS_Unit: WHS_Unit,
             WHS_Weight: parseInt(WHS_Weight),
             WHS_Price: parseInt(WHS_Price),
-            RET_Unit: parseInt(RET_Unit),
+            RET_Unit: RET_Unit,
             RET_Weight: parseInt(RET_Weight),
             RET_Price: parseInt(RET_Price),
-            FG_Unit: parseInt(FG_Unit),
+            FG_Unit: FG_Unit,
             FG_Weight: parseInt(FG_Weight),
             FG_Price: parseInt(FG_Price),
-            date: date
 
         });
         console.log(newMarketDataFlow);

@@ -92,7 +92,5 @@ function saveProdTradeData(tradeFlowProductName, tradeFlowTonage, tradeFlowValue
         locality_to: tradeFlowLocalityTO,
         chiefdom_to: tradeFlowChiefdomTO,
         district_to: tradeFlowDistrictsTO,
-
-
     });
 }
