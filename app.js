@@ -41,11 +41,11 @@ mongoose.connect(db, { useNewUrlParser: true })
 
 // getting access to the database
 var db = firebase.database();
-var ref = db.ref('amisproject-29c95'); //making a reference of the database
+var ref = db.ref('greenta-collect'); // amisproject-29c95 making a reference of the database
 
-// app.set('varRef',ref);
-var usersRef = ref.child("farmers");
-usersRef.set({});
+app.set('varRef', ref);
+// var usersRef = ref.child("farmers");
+// usersRef.set({});
 
 //setting an environment variable
 app.set('port', process.env.PORT || 4000);
