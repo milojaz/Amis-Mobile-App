@@ -1,6 +1,7 @@
 var ExportFlowData = require('../models/exportFlowModel');
 var tradeFlowModel = require('../models/tradeFlowModel');
 var MarketData = require('../models/marketDataModel');
+var stockFlowModel = require('../models/stockFlowModel');
 
 // export
 module.exports = {
@@ -235,44 +236,56 @@ module.exports = {
 
     stockDataPost: (req, res) => {
         const {
-            mktLocality,
-            mktChiefdom,
-            mktDistrict,
-            mktRegion,
-            mktEnumerator,
-            mktProductName,
-            WHS_Unit,
-            WHS_Weight,
-            WHS_Price,
-            RET_Unit,
-            RET_Weight,
-            RET_Price,
-            FG_Unit,
-            FG_Weight,
-            FG_Price,
+            ttmDistrict,
+            marketPlaceArr,
+            ttmMarket,
+            msuProductCategory,
+            productsArr,
+            market_type,
+            ttmPrice,
+            quantityStore,
+            quantityUnit,
+            quantitySold,
+            stockLevel,
+            stockDestination,
+            grandTotal,
+            rent,
+            transportCost,
+            electricity,
+            securityOwn,
+            securityMarketOwn,
+            fumigation,
+            chemicalTreatment,
+            averageCost,
         } = req.body;
 
-        var newMarketDataFlow = new marketData({
-            mktLocality: mktLocality,
-            mktChiefdom: mktChiefdom,
-            mktDistrict: mktDistrict,
-            mktRegion: mktRegion,
-            mktEnumerator: mktEnumerator,
-            mktProductName: mktProductName,
-            WHS_Unit: WHS_Unit,
-            WHS_Weight: parseInt(WHS_Weight),
-            WHS_Price: parseInt(WHS_Price),
-            RET_Unit: RET_Unit,
-            RET_Weight: parseInt(RET_Weight),
-            RET_Price: parseInt(RET_Price),
-            FG_Unit: parseInt(FG_Unit),
-            FG_Weight: parseInt(FG_Weight),
-            FG_Price: parseInt(FG_Price)
+        var newStockDataFlow = new stockFlowModel({
+            ttmDistrict: ttmDistrict,
+            marketPlaceArr: marketPlaceArr,
+            ttmMarket: ttmMarket,
+            msuProductCategory: msuProductCategory,
+            productsArr: productsArr,
+            market_type: market_type,
+            ttmPrice: parseInt(ttmPrice),
+            quantityStore: parseInt(quantityStore),
+            quantityUnit: quantityUnit,
+            quantitySold: parseInt(quantitySold),
+            stockLevel: parseInt(stockLevel),
+            stockDestination: parseInt(stockDestination),
+            grandTotal: parseInt(grandTotal),
+            rent: parseInt(rent),
+            transportCost: parseInt(transportCost),
+            electricity: parseInt(electricity),
+            securityOwn: parseInt(securityOwn),
+            securityMarketOwn: parseInt(securityMarketOwn),
+            fumigation: parseInt(fumigation),
+            chemicalTreatment: parseInt(chemicalTreatment),
+            averageCost: parseInt(averageCost),
 
         });
-        console.log(data);
+        console.log(newStockDataFlow);
         // saving the data
-        newMarketDataFlow.save()
+        newStockDataFlow.save()
             .then(data => {
                 res.render('stockView', {
                     pageTitle: "inputMarketData",
