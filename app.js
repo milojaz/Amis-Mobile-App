@@ -21,7 +21,7 @@ var serviceAccount = require("./greentaCollectServiceAccountKey");
 firebase.initializeApp({
     credential: firebase.credential.cert(serviceAccount),
     databaseURL: "https://greenta-collect.firebaseio.com" 
-    // "https://amisproject-29c95.firebaseio.com" https://greenta-collect.firebaseio.com/
+    // "https://amisproject-29c95.firebaseio.com"
 });
 
 //connecting to mongodb
