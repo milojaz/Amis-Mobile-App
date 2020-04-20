@@ -237,10 +237,10 @@ module.exports = {
     stockDataPost: (req, res) => {
         const {
             ttmDistrict,
-            marketPlaceArr,
+            ttmmarketPlace,
             ttmMarket,
             msuProductCategory,
-            productsArr,
+            msuProductName,
             market_type,
             ttmPrice,
             quantityStore,
@@ -261,17 +261,17 @@ module.exports = {
 
         var newStockDataFlow = new stockFlowModel({
             ttmDistrict: ttmDistrict,
-            marketPlaceArr: marketPlaceArr,
+            marketPlace: ttmmarketPlace,
             ttmMarket: ttmMarket,
             msuProductCategory: msuProductCategory,
-            productsArr: productsArr,
+            products: msuProductName,
             market_type: market_type,
             ttmPrice: parseInt(ttmPrice),
             quantityStore: parseInt(quantityStore),
             quantityUnit: quantityUnit,
             quantitySold: parseInt(quantitySold),
             stockLevel: parseInt(stockLevel),
-            stockDestination: parseInt(stockDestination),
+            stockDestination: stockDestination,
             grandTotal: parseInt(grandTotal),
             rent: parseInt(rent),
             transportCost: parseInt(transportCost),
@@ -288,8 +288,8 @@ module.exports = {
         newStockDataFlow.save()
             .then(data => {
                 res.render('stockView', {
-                    pageTitle: "inputMarketData",
-                    pageID: "inputMarketData",
+                    pageTitle: "inputStockData",
+                    pageID: "inputStockData",
                     enumerator: req.user || data
                 });
 
